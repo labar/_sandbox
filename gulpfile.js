@@ -24,6 +24,9 @@ var inputJS     = './assets/src/js/**/*.js';
 var outputJS    = './assets/js';
 
 // -----------------------------------------------------------------------------
+// TASKS
+// -----------------------------------------------------------------------------
+
 // COMPILE SCSS
 // -----------------------------------------------------------------------------
 
@@ -39,18 +42,16 @@ gulp.task('sass', function() {
     }))
 });
 
-// -----------------------------------------------------------------------------
-// MINIFY JS
+// COMPRESS JS
 // -----------------------------------------------------------------------------
 
 gulp.task('compressJS', function() {
   return gulp.src(inputJS)
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest(outputJS));
 });
 
-// -----------------------------------------------------------------------------
-// SPECIFIC USER TASKS
+// BROWSERSYSC
 // -----------------------------------------------------------------------------
 
 // LABAR: Browser Sync
@@ -60,5 +61,9 @@ gulp.task('browser-sync-labar', function() {
     });
 });
 
+// -----------------------------------------------------------------------------
+// WATCH EVERYTHING
+// -----------------------------------------------------------------------------
+
 // LABAR: Watch Everything
-gulp.task('watch-labar', gulp.series(['sass', 'compressJS', 'browser-sync-labar']));
+gulp.task('default', gulp.series(['sass', 'compressJS', 'browser-sync-labar']));
