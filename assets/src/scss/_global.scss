@@ -1,3 +1,55 @@
+// =============================================================================
+//
+//  GLOBAL
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BOX SIZING
+// -----------------------------------------------------------------------------
+
+// padding and margins does not affect the width and height of elements
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+// -----------------------------------------------------------------------------
+// REMOVE TAP HILIGHT
+// -----------------------------------------------------------------------------
+
+// remove the annoying tap color block
+header,
+aside,
+section,
+div,
+span,
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+// -----------------------------------------------------------------------------
+// HTML / BODY
+// -----------------------------------------------------------------------------
+
+html {
+
+  // This stops the annoying font-bold effect in dropdowns of primary nav
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
+
+  // Base
+  font-size: $font-size;
+  font-family: $custom-font-1;
   margin: 0;
+  width: 100%;
+
+  // Skin
+  background-color: $color-jetfire;
 }

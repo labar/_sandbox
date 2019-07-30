@@ -1,0 +1,135 @@
+// =============================================================================
+//
+// SETTINGS
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// FONT
+// -----------------------------------------------------------------------------
+
+$font-size:      16px;
+$em-base:        $font-size;   // this is for px-to-rem calculation
+$asset-pipeline: false;        // bourbon var for font face function
+$custom-font-1:  'Open Sans', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+$custom-font-2:  '';
+
+// -----------------------------------------------------------------------------
+// TRANSITIONS
+// -----------------------------------------------------------------------------
+
+$global-easing: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+$global-timing: .5s;
+
+// -----------------------------------------------------------------------------
+// COLORS
+// -----------------------------------------------------------------------------
+
+// Base
+$color-jetfire:                         #ffffff;
+$color-skywarp:                         #000000;
+
+// -----------------------------------------------------------------------------
+// BREAKPOINTS
+// -----------------------------------------------------------------------------
+
+// Standard
+// -----------------------------------------------------------------------------
+
+$mobile-large:                          400px;
+$tablet-small:                          500px;
+$tablet:                                700px;
+$bp-825:                                825px;
+$narrow:                                960px;
+$desktop:                               1200px;
+$wide:                                  2200px;
+
+// -----------------------------------------------------------------------------
+// SIZE VARIABLES
+// -----------------------------------------------------------------------------
+
+$container-width-narrow:                100%;
+$container-width-desktop:               1200px;
+$container-width-wide:                  1600px;
+$topbar-height:                         45px;
+$topbar-height-large:                   90px;
+$primary-nav-dropdown-height:           90px;
+$metabar-height:                        40px;
+
+// -----------------------------------------------------------------------------
+// Z-INDEX MAP
+// -----------------------------------------------------------------------------
+
+$z-index-flat: 0;                       //
+$z-index-1:    10;                      //
+$z-index-2:    20;                      //
+$z-index-3:    30;                      //
+$z-index-4:    40;                      //
+$z-index-5:    50;                      //
+$z-index-6:    60;                      //
+$z-index-7:    70;                      //
+$z-index-71:   71;                      //
+$z-index-8:    80;                      //
+$z-index-81:   81;                      //
+$z-index-9:    90;                      //
+$z-index-10:   100;                     //
+$z-index-mega: 999999999;               // because plugins. sadness
+
+// -----------------------------------------------------------------------------
+// ICON VARIABLES (icomoon)
+// -----------------------------------------------------------------------------
+
+$icomoon-font-path:    "fonts" !default;
+
+$fs-halo-ad:           "\e900";
+$fs-halo-biz:          "\e901";
+$fs-halo-film:         "\e902";
+$fs-halo-games:        "\e903";
+$fs-halo-media:        "\e904";
+$fs-halo-music:        "\e905";
+$fs-halo-sports:       "\e906";
+$fs-halo-tech:         "\e907";
+$fs-pencil:            "\e908";
+$fs-pencil-circle:     "\e909";
+$fs-pencil-fill:       "\e90a";
+$fs-phone:             "\e90f";
+$fs-phone-circle:      "\e910";
+$fs-phone-fill:        "\e90b";
+$fs-chat:              "\e912";
+$fs-chat-circle:       "\e916";
+$fs-chat-fill:         "\e90c";
+$fs-info:              "\e913";
+$fs-info-circle:       "\e91d";
+$fs-info-fill:         "\e90d";
+$fs-vr:                "\e921";
+$fs-vr-alt:            "\e922";
+$fs-play:              "\e937";
+$fs-play-alt:          "\e923";
+$fs-facebook:          "\e924";
+$fs-instagram:         "\e925";
+$fs-linkedin:          "\e926";
+$fs-pinterest:         "\e927";
+$fs-snapchat:          "\e928";
+$fs-tumblr:            "\e929";
+$fs-twitter:           "\e92a";
+$fs-youtube:           "\e92b";
+$fs-grid-outline:      "\e92c";
+$fs-grid:              "\e92d";
+$fs-list-outline:      "\e92e";
+$fs-list:              "\e92f";
+$fs-alert:             "\e930";
+$fs-check:             "\e8f3";
+$fs-close:             "\e934";
+$fs-arrow-left-alt:    "\e90e";
+$fs-arrow-right-alt:   "\e911";
+$fs-arrow-up:          "\e935";
+$fs-arrow-down:        "\e936";
+$fs-arrow-left:        "\e938";
+$fs-arrow-right:       "\e939";
+$fs-upload:            "\e93a";
+$fs-download:          "\e93b";
+$fs-filter:            "\e93c";
+$fs-bullet:            "\e93d";
+$fs-bars:              "\e93e";
+$fs-search:            "\e93f";
+$fs-slash-bullet:      "\e914";
