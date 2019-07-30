@@ -61,7 +61,4 @@ gulp.task('browser-sync-labar', function() {
 });
 
 // LABAR: Watch Everything
-gulp.task('watch-labar', gulp.series(['sass', 'compressJS', 'browser-sync-labar']), function (){
-  gulp.watch(inputSass, gulp.parallel(['sass']));
-  gulp.watch(inputJS,   gulp.parallel(['compressJS']));
-});
+gulp.task('watch-labar', gulp.series(['sass', 'compressJS', 'browser-sync-labar']));
