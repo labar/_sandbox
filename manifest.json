@@ -1,0 +1,13 @@
+{
+  "name": "SKELETOR | Boiler Room",
+  "short_name": "SKELETOR 💀",
+  "description": "Starter web dimension where Skletor has defeated He-Man and now rules the Universe",
+  "start_url": "/",
+  "background_color": "#56429a",
+  "theme_color": "#000000",
+  "icons": [{
+    "src": "icon-256.png",
+    "sizes": "256x256",
+    "type": "image/png"
+  }]
+}

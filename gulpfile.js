@@ -45,7 +45,7 @@ gulp.task('sass', function() {
 
 gulp.task('compressJS', function() {
   return gulp.src(inputJS)
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest(outputJS));
 });
 
@@ -61,7 +61,7 @@ gulp.task('browser-sync-labar', function() {
 });
 
 // LABAR: Watch Everything
-gulp.task('watch-labar', ['browser-sync-labar', 'sass', 'compressJS'], function (){
-  gulp.watch(inputSass, ['sass']);
-  gulp.watch(inputJS, ['compressJS'], browserSync.reload);
+gulp.task('watch-labar', gulp.series(['browser-sync-labar', 'sass', 'compressJS']), function (){
+  gulp.watch(inputSass, gulp.parallel(['sass']));
+  gulp.watch(inputJS,   gulp.parallel(['compressJS']));
 });
