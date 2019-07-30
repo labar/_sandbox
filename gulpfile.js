@@ -4,23 +4,24 @@
 
 var gulp         = require('gulp');
 var sass         = require('gulp-sass');
-var uglify       = require('gulp-uglify');
-var browserSync  = require('browser-sync').create();
-var sourcemaps   = require('gulp-sourcemaps');
 var postcss      = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
+var uglify       = require('gulp-uglify');
+var pipeline     = require('readable-stream').pipeline;
+var browserSync  = require('browser-sync').create();
+var sourcemaps   = require('gulp-sourcemaps');
 
 // -----------------------------------------------------------------------------
 // TARGETS
 // -----------------------------------------------------------------------------
 
-// SOURCE - SCSS
+// CSS Source
 var inputSass   = './assets/src/scss/**/*.scss';
-// TARGET - CSS
+// CSS Destination
 var outputSass  = './assets/css';
-// SOURCE - JS
+// JS Source
 var inputJS     = './assets/src/js/**/*.js';
-// TARGET - JS
+// JS Target
 var outputJS    = './assets/js';
 
 // -----------------------------------------------------------------------------
@@ -46,9 +47,12 @@ gulp.task('sass', function() {
 // -----------------------------------------------------------------------------
 
 gulp.task('compressJS', function() {
-  return gulp.src(inputJS)
-    // .pipe(uglify())
-    .pipe(gulp.dest(outputJS));
+  return pipeline(
+    gulp.src(inputJS),
+    uglify(),
+    gulp.dest(outputJS)
+  );
+  browserSync.reload();
 });
 
 // BROWSERSYSC
@@ -66,4 +70,4 @@ gulp.task('browser-sync-labar', function() {
 // -----------------------------------------------------------------------------
 
 // LABAR: Watch Everything
-gulp.task('default', gulp.series(['sass', 'compressJS', 'browser-sync-labar']));
+gulp.watch('default', gulp.series(['sass', 'compressJS', 'browser-sync-labar']));
