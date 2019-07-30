@@ -1,0 +1,22 @@
+// =============================================================================
+//
+// MIXIN: SPACER
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+// use the strip-units function to remove rem/px
+$font-size-relative: strip-units($font-size);
+
+// using the relative value from above, calculate the width and height in rem
+@mixin spacer($size) {
+
+  $spacerRemCalc: ($size / $font-size-relative);
+
+  display: block;
+  width: $spacerRemCalc+rem;
+  height: $spacerRemCalc+rem;
+}

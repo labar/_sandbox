@@ -31,7 +31,7 @@ gulp.task('sass', function() {
   return gulp.src(inputSass)
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError)) // OutputStyle options: nested, compact, expanded, compressed
-    .pipe(postcss([ autoprefixer({grid: true, browsers:["last 2 versions"]}) ]))
+    .pipe(postcss([ autoprefixer({grid: true, browserlist:["last 2 versions"]}) ]))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(outputSass))
     .pipe(browserSync.reload({
