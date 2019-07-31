@@ -4,70 +4,45 @@
 
 var gulp         = require('gulp');
 var sass         = require('gulp-sass');
-var postcss      = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var uglify       = require('gulp-uglify');
-var pipeline     = require('readable-stream').pipeline;
-var browserSync  = require('browser-sync').create();
-var sourcemaps   = require('gulp-sourcemaps');
 
 // -----------------------------------------------------------------------------
 // TARGETS
 // -----------------------------------------------------------------------------
 
-// CSS Source
-var inputSass   = './assets/src/scss/**/*.scss';
-// CSS Destination
-var outputSass  = './assets/css';
-// JS Source
-var inputJS     = './assets/src/js/**/*.js';
-// JS Target
-var outputJS    = './assets/js';
+var sourceSass   = './assets/src/scss/**/*.scss';
+var targetSass   = './assets/css';
 
 // -----------------------------------------------------------------------------
-// TASKS
+// TASK: STYLE
 // -----------------------------------------------------------------------------
 
-// COMPILE SCSS
-// -----------------------------------------------------------------------------
+function style() {
+  return (
+    gulp
+      // get the source files
+      .src(sourceSass)
 
-gulp.task('sass', function() {
-  return gulp.src(inputSass)
-    .pipe(sourcemaps.init())
-    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError)) // OutputStyle options: nested, compact, expanded, compressed
-    .pipe(postcss([ autoprefixer({grid: true, browserlist:["last 2 versions"]}) ]))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(outputSass))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-});
+      // Use sass with the files found, and log any errors
+      .pipe(sass())
+      .on("error", sass.logError)
 
-// COMPRESS JS
-// -----------------------------------------------------------------------------
-
-gulp.task('compressJS', function() {
-  return pipeline(
-    gulp.src(inputJS),
-    uglify(),
-    gulp.dest(outputJS)
+      // What is the destination for the compiled file?
+      .pipe(gulp.dest(targetSass))
   );
-  browserSync.reload();
-});
+}
 
-// BROWSERSYSC
-// -----------------------------------------------------------------------------
-
-// LABAR: Browser Sync
-gulp.task('browser-sync-labar', function() {
-    browserSync.init({
-      proxy: "sandbox.labar"
-    });
-});
+// Expose the task by exporting it.
+exports.style = style;
 
 // -----------------------------------------------------------------------------
-// WATCH EVERYTHING
+// TASK: WATCH
 // -----------------------------------------------------------------------------
 
-// LABAR: Watch Everything
-gulp.watch('default', gulp.series(['sass', 'compressJS', 'browser-sync-labar']));
+function watch(){
+  // gulp.watch takes in the location of the files to watch for changes
+  // and the name of the function we want to run on change
+  gulp.watch(sourceSass, style)
+}
+
+// Don't forget to expose the task!
+exports.watch = watch
