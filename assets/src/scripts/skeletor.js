@@ -84,35 +84,6 @@ $(document).keydown(function(e) {
 $(function() { // wait for document ready
 
   // ---------------------------------------------------------------------------
-  //  VENDOR
-  // ---------------------------------------------------------------------------
-
-  // allows copy to user's clipboard
-  var myClipboard = require('./clipboard');
-
-  // jquery easing plugins for more easing options
-  var myEasing = require('./easing');
-
-  // ---------------------------------------------------------------------------
-  //  CLIPBOARD
-  // ---------------------------------------------------------------------------
-  //  https://clipboardjs.com/
-  // ---------------------------------------------------------------------------
-
-  var clipboard = new Clipboard('.clipboard');
-
-  clipboard.on('success', function(e) {
-
-    // console.info('Action:', e.action);
-    // console.info('Text:', e.text);
-    // console.info('Trigger:', e.trigger);
-    $('.info-bar').fadeIn().delay(1000).fadeOut();
-
-    e.clearSelection();
-
-  });
-
-  // ---------------------------------------------------------------------------
   //  SMOOTH CRIMINAL
   // ---------------------------------------------------------------------------
 
