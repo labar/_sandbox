@@ -1,0 +1,55 @@
+// =============================================================================
+//
+// DISCLAIMERS
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+.disclaimer {
+	position: relative;
+	font-size: rem(14);
+	padding-left: rem(40);
+	margin: rem(20) 0;
+	color: $color-trypticon;
+
+	&:after {
+		font-family: 'skeletor';
+		content: $fs-slash-bullet;
+		font-size: rem(16);
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		color: $color-hotrod;
+	}
+
+	a {
+		text-decoration: underline;
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		font-size: rem(16);
+		&:after {
+			top: 2px;
+		}
+	}
+}
+
+.disclaimer--gray {
+	&:after {
+		color: $color-grimlock;
+	}
+}
+
+p + .disclaimer {
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		margin-top: rem(40);
+	}
+}

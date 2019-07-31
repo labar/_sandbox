@@ -1,0 +1,328 @@
+// =============================================================================
+//
+// CTA
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// PARENT
+// -----------------------------------------------------------------------------
+
+.ctas {
+	.cta:first-child {
+		margin-top: 0;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// BLOCK
+// -----------------------------------------------------------------------------
+
+.cta {
+	padding: rem(20);
+	padding-right: rem(50);
+	margin-top: rem(10);
+	margin-bottom: rem(10);
+
+	// Position relative for icon arrow positioning on the pseudo element
+	position: relative;
+	cursor: pointer;
+
+	// For when cta is an anchor
+	display: block;
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		padding: rem(30);
+		padding-right: rem(60);
+		margin-top: rem(15);
+		margin-bottom: rem(15);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// ELEMENTS
+// -----------------------------------------------------------------------------
+
+// Title
+// -----------------------------------------------------------------------------
+
+.cta__title {
+	font-weight: bold;
+	font-size: rem(14);
+	padding-bottom: rem(12);
+
+	.semi-bold {
+		font-weight: 400;
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		font-size: rem(16);
+	}
+}
+
+.cta__title:only-child {
+	padding-bottom: 0;
+}
+
+.cta__title--caps {
+	text-transform: uppercase;
+	font-size: rem(24);
+	font-weight: 300;
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		font-size: rem(28);
+	}
+}
+
+.cta__title--large {
+	font-size: rem(20);
+	font-weight: 300;
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		font-size: rem(26);
+	}
+}
+
+// Description
+// -----------------------------------------------------------------------------
+
+.cta__description {
+	font-size: rem(15);
+	strong {
+		display: block;
+	}
+}
+
+// Icon Arrow
+// -----------------------------------------------------------------------------
+
+.cta:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: rem(20);
+	margin-top: rem(-15);
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		margin-top: rem(-30);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// MODIFIERS
+// -----------------------------------------------------------------------------
+
+// Primary
+// -----------------------------------------------------------------------------
+
+.cta--primary {
+	background-color: $color-hotrod;
+	transition: background-color $global-timing $global-easing;
+
+	.cta__title {
+		color: $color-jetfire;
+	}
+
+	.cta__description {
+		color: $color-starscream;
+	}
+
+	&:after {
+		font-family: $iconakron;
+		content: $fs-arrow-right-alt;
+		font-size: rem(30);
+		color: $color-jetfire;
+	}
+
+	&:hover {
+		background-color: lighten($color-hotrod,5%);
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		&:after {
+			font-size: rem(60);
+		}
+	}
+}
+
+// Secondary
+// -----------------------------------------------------------------------------
+
+.cta--secondary {
+	background-color: $color-starscream;
+	border-left: solid rem(3) $color-hotrod;
+	transition: background-color $global-timing $global-easing;
+
+	.cta__title {
+		color: $color-hotrod;
+	}
+
+	.cta__description {
+		color: $color-trypticon;
+	}
+
+	&:after {
+		font-family: $iconakron;
+		content: $fs-arrow-right-alt;
+		font-size: rem(30);
+		color: $color-hotrod;
+	}
+
+	&:hover {
+		background-color: $color-hotrod;
+		.cta__title {
+			color: $color-jetfire;
+		}
+		.cta__description {
+			color: $color-jetfire;
+			strong {
+				color: $color-jetfire;
+			}
+		}
+		&:after {
+			color: $color-jetfire;
+		}
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		&:after {
+			font-size: rem(60);
+		}
+	}
+}
+
+// Secondary ALT
+// -----------------------------------------------------------------------------
+
+.cta--secondary-alt {
+	@extend .cta--secondary;
+	background-color: $color-jetfire;
+}
+
+// Secondary ALT Bumblebe
+// -----------------------------------------------------------------------------
+
+.cta--secondary-alt-bumblebee {
+	border-color: $color-bumblebee;
+	.cta__title {
+		color: $color-trypticon;
+	}
+	&:hover {
+		background-color: $color-bumblebee;
+		&:after {
+			background-image: none;
+		}
+	}
+}
+
+// Dark
+// -----------------------------------------------------------------------------
+
+.cta--dark {
+	background-color: $color-trypticon;
+	color: $color-jetfire;
+	transition: background-color $global-timing $global-easing;
+	&:hover {
+		background-color: darken($color-trypticon,10%);
+	}
+	&:after {
+		font-family: $iconakron;
+		content: "\e90a";
+		font-size: rem(30);
+		color: $color-jetfire;
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		&:after {
+			font-size: rem(60);
+		}
+	}
+}
+
+// -----------------------------------------------------------------------------
+// ICON - Icon instead of arrow
+// -----------------------------------------------------------------------------
+
+.cta--custom-icon {
+	padding-right: rem(68);
+	&:after {
+		font-size: rem(40);
+		font-family: $iconakron;
+		content: $fs-download;
+		background-image: none;
+		position: absolute;
+		top: 50%;
+		right: 20px;
+		margin-top: rem(-20);
+	}
+	&:hover:after {
+		background-image: none;
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		&:after {
+			font-size: rem(50);
+			// right: 45px;
+			margin-top: rem(-25);
+		}
+	}
+}
+
+.cta--primary.cta--custom-icon {
+	&:after {
+		color: $color-jetfire;
+	}
+}
+
+.cta--secondary.cta--custom-icon {
+	&:after {
+		color: $color-hotrod;
+	}
+	&:hover:after {
+		color: $color-jetfire;
+	}
+}
+
+.cta--secondary-alt-bumblebee.cta--custom-icon {
+	&:after {
+		color: $color-bumblebee;
+	}
+}
+
+.cta--dark.cta--custom-icon {
+	&:after {
+		color: $color-jetfire;
+	}
+}
+
+.cta--custom-icon-call {
+	&:after {
+		content: '\e91e';
+		font-family: $iconakron;
+	}
+}
+
+.cta--custom-icon-talk {
+	&:after {
+		content: '\e91d';
+		font-family: $iconakron;
+	}
+}

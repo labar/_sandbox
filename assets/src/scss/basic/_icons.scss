@@ -1,0 +1,323 @@
+// =============================================================================
+//
+// TYPOGRAPHY
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// ICOMOON FONT OVERRIDES
+// -----------------------------------------------------------------------------
+
+@include font-face("skeletor", "../fonts/skeletor");
+
+.fs {
+	font-family: $iconakron !important;
+  font-size: rem(14);
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: normal;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+// -----------------------------------------------------------------------------
+// MODIFIER
+// -----------------------------------------------------------------------------
+
+// add spacing to the left or right of the icon
+// mainly when icon is paired with text
+.fs--space-right {
+  padding-right: rem(10);
+}
+.fs--space-left {
+  padding-left: rem(10);
+}
+
+// -----------------------------------------------------------------------------
+// Styles copied from icomoon app
+// -----------------------------------------------------------------------------
+
+.fs-halo-ad {
+  &:before {
+    content: $fs-halo-ad;
+  }
+}
+.fs-halo-biz {
+  &:before {
+    content: $fs-halo-biz;
+  }
+}
+.fs-halo-film {
+  &:before {
+    content: $fs-halo-film;
+  }
+}
+.fs-halo-games {
+  &:before {
+    content: $fs-halo-games;
+  }
+}
+.fs-halo-media {
+  &:before {
+    content: $fs-halo-media;
+  }
+}
+.fs-halo-music {
+  &:before {
+    content: $fs-halo-music;
+  }
+}
+.fs-halo-sports {
+  &:before {
+    content: $fs-halo-sports;
+  }
+}
+.fs-halo-tech {
+  &:before {
+    content: $fs-halo-tech;
+  }
+}
+.fs-pencil {
+  &:before {
+    content: $fs-pencil;
+  }
+}
+.fs-pencil-circle {
+  &:before {
+    content: $fs-pencil-circle;
+  }
+}
+.fs-pencil-fill {
+  &:before {
+    content: $fs-pencil-fill;
+  }
+}
+.fs-phone {
+  &:before {
+    content: $fs-phone;
+  }
+}
+.fs-phone-circle {
+  &:before {
+    content: $fs-phone-circle;
+  }
+}
+.fs-phone-fill {
+  &:before {
+    content: $fs-phone-fill;
+  }
+}
+.fs-chat {
+  &:before {
+    content: $fs-chat;
+  }
+}
+.fs-chat-circle {
+  &:before {
+    content: $fs-chat-circle;
+  }
+}
+.fs-chat-fill {
+  &:before {
+    content: $fs-chat-fill;
+  }
+}
+.fs-info {
+  &:before {
+    content: $fs-info;
+  }
+}
+.fs-info-circle {
+  &:before {
+    content: $fs-info-circle;
+  }
+}
+.fs-info-fill {
+  &:before {
+    content: $fs-info-fill;
+  }
+}
+.fs-vr {
+  &:before {
+    content: $fs-vr;
+  }
+}
+.fs-vr-alt {
+  &:before {
+    content: $fs-vr-alt;
+  }
+}
+.fs-play {
+  &:before {
+    content: $fs-play;
+  }
+}
+.fs-play-alt {
+  &:before {
+    content: $fs-play-alt;
+  }
+}
+.fs-facebook {
+  &:before {
+    content: $fs-facebook;
+  }
+}
+.fs-instagram {
+  &:before {
+    content: $fs-instagram;
+  }
+}
+.fs-linkedin {
+  &:before {
+    content: $fs-linkedin;
+  }
+}
+.fs-pinterest {
+  &:before {
+    content: $fs-pinterest;
+  }
+}
+.fs-snapchat {
+  &:before {
+    content: $fs-snapchat;
+  }
+}
+.fs-tumblr {
+  &:before {
+    content: $fs-tumblr;
+  }
+}
+.fs-twitter {
+  &:before {
+    content: $fs-twitter;
+  }
+}
+.fs-youtube {
+  &:before {
+    content: $fs-youtube;
+  }
+}
+.fs-grid-outline {
+  &:before {
+    content: $fs-grid-outline;
+  }
+}
+.fs-grid {
+  &:before {
+    content: $fs-grid;
+  }
+}
+.fs-list-outline {
+  &:before {
+    content: $fs-list-outline;
+  }
+}
+.fs-list {
+  &:before {
+    content: $fs-list;
+  }
+}
+.fs-alert {
+  &:before {
+    content: $fs-alert;
+  }
+}
+.fs-check {
+  &:before {
+    content: $fs-check;
+  }
+}
+.fs-close {
+  &:before {
+    content: $fs-close;
+  }
+}
+.fs-arrow-left-alt {
+  &:before {
+    content: $fs-arrow-left-alt;
+  }
+}
+.fs-arrow-right-alt {
+  &:before {
+    content: $fs-arrow-right-alt;
+  }
+}
+.fs-arrow-up {
+  &:before {
+    content: $fs-arrow-up;
+  }
+}
+.fs-arrow-down {
+  &:before {
+    content: $fs-arrow-down;
+  }
+}
+.fs-arrow-left {
+  &:before {
+    content: $fs-arrow-left;
+  }
+}
+.fs-arrow-right {
+  &:before {
+    content: $fs-arrow-right;
+  }
+}
+.fs-upload {
+  &:before {
+    content: $fs-upload;
+  }
+}
+.fs-download {
+  &:before {
+    content: $fs-download;
+  }
+}
+.fs-filter {
+  &:before {
+    content: $fs-filter;
+  }
+}
+.fs-bullet {
+  &:before {
+    content: $fs-bullet;
+  }
+}
+.fs-bars {
+  &:before {
+    content: $fs-bars;
+  }
+}
+.fs-search {
+  &:before {
+    content: $fs-search;
+  }
+}
+.fs-slash-bullet {
+  &:before {
+    content: $fs-slash-bullet;
+  }
+}
+// -----------------------------------------------------------------------------
+// FABRICATOR GRID
+// -----------------------------------------------------------------------------
+
+.icons {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: rem(60);
+}
+.icons .block {
+  margin-bottom: rem(20);
+  text-align: center;
+}
+
+.icons i {
+  font-size: rem(80);
+  margin: rem(20);
+  color: $color-trypticon;
+}

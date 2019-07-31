@@ -1,0 +1,14 @@
+
+// -----------------------------------------------------------------------------
+// PRIMARY
+// -----------------------------------------------------------------------------
+
+.btn--primary {
+	padding: rem(14) rem(24);
+	background-color: $color-hotrod;
+	color: $color-jetfire;
+	&:hover {
+		background-color: $color-trypticon;
+		color: $color-jetfire;
+	}
+}

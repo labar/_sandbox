@@ -1,0 +1,63 @@
+// =============================================================================
+//
+//  BADGES
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+//  BASE
+// -----------------------------------------------------------------------------
+
+.badge {
+	display: inline-block;
+	padding: rem(7) rem(14);
+	margin-right: rem(10);
+	font-size: rem(13);
+  font-weight: 600;
+  border-radius: 3px;
+  border: solid 2px $color-grimlock;
+  color: $color-grimlock;
+
+  i {
+    color: $color-grimlock;
+  }
+
+  // remove right margin when there is only 1 child or the last item
+	&:last-child,
+	&:only-child {
+		margin-right: 0;
+	}
+}
+
+// -----------------------------------------------------------------------------
+//  CLOSE ICON
+// -----------------------------------------------------------------------------
+
+.badge .fs-close {
+  color: $color-bumblebee;
+}
+
+// -----------------------------------------------------------------------------
+//  STATES: MODIFIERS
+// -----------------------------------------------------------------------------
+
+.badge--highlight {
+  color: $color-trypticon;
+  border-color: $color-bumblebee;
+  background-color: transparent;
+}
+
+.badge--disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+.badge--inverse {
+  color: $color-trypticon;
+  background-color: $color-jetfire;
+}
+
+.badge--highlight.badge--inverse {
+  color: $color-jetfire;
+  background-color: transparent;
+}

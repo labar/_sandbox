@@ -1,0 +1,26 @@
+// =============================================================================
+//
+// SKELETOR
+// - a bunch of skeletor nonsense
+//
+// =============================================================================
+
+.lord-skeletor {
+
+	// Background image, position and sizing
+	background-image: url('../images/skeletor/archway-01.jpg');
+	height: 300px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	// Add some space between the bottom of Lord Skeletor and the heading
+	margin-bottom: rem(20);
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		// Add some space between the bottom of Lord Skeletor and the heading
+		margin-bottom: rem(40);
+	}
+}

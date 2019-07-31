@@ -1,0 +1,28 @@
+// =============================================================================
+//
+// NEWSPAPER COLUMNS
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+.newspaper-columns {
+	columns: 1 auto;
+	column-gap: 20px;
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($tablet) {
+		columns: 2 auto;
+		column-gap: 40px;
+	}
+}
+
+// 3 columns
+.newspaper-columns--3-columns {
+	@include breakpoint($desktop) {
+		columns: 3 auto;
+	}
+}

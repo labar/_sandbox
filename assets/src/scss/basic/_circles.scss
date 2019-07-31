@@ -1,0 +1,169 @@
+// =============================================================================
+//
+// CIRCLES
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+.circles {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+// add visual space to the bottom of each circle
+.circles .block {
+	margin-bottom: rem(20);
+}
+
+// -----------------------------------------------------------------------------
+// CIRCLE
+// -----------------------------------------------------------------------------
+
+.circle {
+	color: $color-trypticon;
+	border-radius: 50%;
+	width: rem(120);
+	height: rem(120);
+	margin: rem(20);
+	padding: rem(10);
+	font-size: rem(14);
+
+	// center the content
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+  // -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		width: rem(165);
+		height: rem(165);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// MODIFIERS
+// -----------------------------------------------------------------------------
+
+.circle--medium {
+	width: rem(82);
+	height: rem(82);
+}
+
+// -----------------------------------------------------------------------------
+// SKINS
+// -----------------------------------------------------------------------------
+
+.circle {
+	&.jetfire {
+		background-color: $color-jetfire;
+		color: $color-trypticon;
+		border: solid 2px $color-trypticon;
+	}
+	&.trypticon {
+		background-color: $color-trypticon;
+		color: $color-jetfire;
+	}
+	&.wreck-gar {
+		background-color: $color-wreck-gar;
+	}
+	&.starscream {
+		background-color: $color-starscream;
+	}
+	&.megatron {
+		background-color: $color-megatron;
+	}
+	&.grimlock {
+		background-color: $color-grimlock;
+	}
+	&.prowl {
+		background-color: $color-prowl;
+		color: $color-jetfire;
+	}
+	&.devastator {
+		background-color: $color-devastator;
+		color: $color-jetfire;
+	}
+	&.hotrod {
+		background-color: $color-hotrod;
+		color: $color-jetfire;
+	}
+	&.bumblebee {
+		background-color: $color-bumblebee;
+		color: $color-jetfire;
+	}
+	&.trapjaw {
+		background-color: $color-trapjaw;
+	}
+	&.evillyn {
+		background-color: $color-evillyn;
+	}
+	&.faker {
+		background-color: $color-faker;
+	}
+	&.manefaces {
+		background-color: $color-manefaces;
+	}
+	&.ultramagnus {
+		background-color: $color-ultramagnus;
+	}
+	&.beastman {
+		background-color: $color-beastman;
+	}
+	&.triklops {
+		background-color: $color-triklops;
+	}
+	&.whiplash {
+		background-color: $color-whiplash;
+	}
+	&.hordak {
+		background-color: $color-hordak;
+	}
+	&.skeletor {
+		background-color: $color-skeletor;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// LABEL
+// -----------------------------------------------------------------------------
+
+.circle-label {
+	text-align: center;
+	font-size: rem(14);
+	color: $color-trypticon;
+}
+
+// -----------------------------------------------------------------------------
+// CLIPBOARD & INFO BAR
+// -----------------------------------------------------------------------------
+
+.clipboard {
+	opacity: 1;
+	transition: opacity $global-timing $global-easing;
+}
+
+.clipboard:hover {
+	cursor: pointer;
+	opacity: .7;
+}
+
+.info-bar {
+	display: none;
+	position: fixed;
+	width: 100%;
+	padding: rem(10);
+	text-align: center;
+	background-color: $color-megatron;
+	top: 0px;
+	right: 0px;
+	font-size: rem(16);
+	box-shadow: 0px 0px 6px 0px rgba($color-skywarp,.5);
+}

@@ -1,0 +1,113 @@
+// =============================================================================
+//
+// META BAR
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+.metabar {
+
+	// hide metabar on mobile
+	display: none;
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($tablet) {
+
+		// show metabar
+		display: block;
+
+		// base
+		height: $topbar-height;
+		text-align: right;
+		line-height: $topbar-height;
+
+		// fixed position
+		position: fixed;
+		top: 0px;
+		right: rem(45);
+		z-index: $z-index-81;
+
+		// make metabar a flex container for item positioning
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: flex-end;
+	}
+
+	@include breakpoint($narrow) {
+		width: 100%;
+		height: $metabar-height;
+		left: 0px;
+		background-color: $color-starscream;
+		border-bottom: solid 1px $color-megatron;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// LIST ITEM
+// -----------------------------------------------------------------------------
+
+.metabar__item {
+	display: inline-block;
+	margin: 0 rem(12);
+	font-size: rem(14);
+	color: $color-trypticon;
+
+	// Link
+	a {
+		color: $color-trypticon;
+		&:hover {
+			color: $color-bumblebee;
+		}
+	}
+
+	// Icon
+	i {
+		padding-left: rem(2);
+		color: $color-bumblebee;
+		vertical-align: baseline;
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		margin: 0 rem(16);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// INVERSE
+// -----------------------------------------------------------------------------
+
+.metabar--inverse {
+
+	color: $color-jetfire;
+
+	a,
+	.metabar__item {
+		color: $color-jetfire;
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($tablet) {
+
+		a,
+		.metabar__item {
+			color: $color-devastator;
+		}
+	}
+
+	@include breakpoint($narrow) {
+		background-color: $color-devastator;
+
+		a,
+		.metabar__item {
+			color: $color-jetfire;
+		}
+	}
+}

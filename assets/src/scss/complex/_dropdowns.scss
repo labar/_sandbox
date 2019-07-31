@@ -1,0 +1,131 @@
+// =============================================================================
+//
+// DROPDOWNS
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BLOCK
+// -----------------------------------------------------------------------------
+
+.dropdown {
+  position: relative;
+}
+
+// -----------------------------------------------------------------------------
+// TOGGLE
+// -----------------------------------------------------------------------------
+
+.dropdown__toggle {
+  cursor: pointer;
+}
+
+// -----------------------------------------------------------------------------
+// MENU
+// -----------------------------------------------------------------------------
+
+.dropdown__menu {
+  width: auto;
+  padding: rem(7) 0;
+  position: absolute;
+  left: 0;
+  background-color: $color-jetfire;
+  border: solid 1px $color-megatron;
+  box-shadow: 0 3px 5px 0 rgba($color-skywarp,.1);
+  z-index: $z-index-1;
+
+  min-width: rem(220);
+
+  // initial hide and transition setup
+  visibility:hidden;
+  opacity:0;
+  filter: alpha(opacity=0);
+  transition: all $global-timing $global-easing;
+}
+
+// -----------------------------------------------------------------------------
+// TITLE
+// -----------------------------------------------------------------------------
+
+.dropdown__title {
+  text-transform: uppercase;
+  font-size: rem(14);
+  padding: rem(15) rem(10);
+  font-weight: bold;
+  border-bottom: solid 2px $color-bumblebee;
+  color: $color-trypticon;
+}
+
+// -----------------------------------------------------------------------------
+// ITEM
+// -----------------------------------------------------------------------------
+
+.dropdown__item {
+  width: 100%;
+  padding: rem(10);
+  display: block;
+  font-size: rem(14);
+  text-align: left;
+
+  // Hover & Focus
+  &:hover,
+  &:focus {
+    background-color: $color-starscream;
+  }
+
+  // Active Class
+  &.active {
+    background-color: $color-starscream;
+  }
+
+  // Icon
+  i {
+    margin-right: rem(5);
+  }
+}
+
+// when item is a link, override link color
+a.dropdown__item {
+  color: $color-trypticon;
+}
+
+// when item is a button, remove default styles
+button.dropdown__item {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  color: $color-trypticon;
+  margin: 0;
+  display: block;
+  cursor: pointer;
+}
+
+// -----------------------------------------------------------------------------
+// DIVIDER
+// -----------------------------------------------------------------------------
+
+.dropdown__divider,
+.dropdown__menu hr { // mostly for dave sanderson
+  display: block;
+  height: 1px;
+  background-color: $color-megatron;
+}
+
+// -----------------------------------------------------------------------------
+// MODIFIERS
+// -----------------------------------------------------------------------------
+
+// MENU
+// -----------------------------------------------------------------------------
+
+// fluid width dropdown
+.dropdown--fluid .dropdown__menu {
+  width: 100%;
+}
+
+// show dropdown menu on click
+.dropdown.show .dropdown__menu {
+  visibility: visible;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}

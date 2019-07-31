@@ -1,0 +1,30 @@
+// =============================================================================
+//
+// SELECT FILTER
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+.select-filter {
+
+  display:         flex;
+  flex-flow:       row nowrap;
+  align-items:     flex-start;
+  justify-content: flex-start;
+
+  .form-field__select:after {
+    bottom: rem(17);
+  }
+
+  select {
+    padding-top:    rem(13);
+    padding-bottom: rem(13);
+  }
+
+  .form-field--select + .btn {
+    margin-left: rem(10);
+  }
+}

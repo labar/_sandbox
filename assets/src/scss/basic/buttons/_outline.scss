@@ -1,0 +1,47 @@
+
+// -----------------------------------------------------------------------------
+// OUTLINE
+// -----------------------------------------------------------------------------
+
+// Primary
+// -----------------------------------------------------------------------------
+
+.btn--outline {
+	padding: rem(10) rem(20);
+	font-size: rem(20);
+	color: $color-trypticon;
+	background-color: $color-jetfire;
+	border: solid 3px $color-bumblebee;
+	text-transform: uppercase;
+	vertical-align: middle;
+	min-height: rem(53);
+
+	&:hover {
+		background-color: $color-bumblebee;
+	}
+}
+
+// Primary Inverse
+// -----------------------------------------------------------------------------
+
+.btn--outline.btn--inverse {
+  background-color: transparent;
+  color: $color-jetfire;
+}
+
+// Secondary
+// -----------------------------------------------------------------------------
+
+.btn--outline.btn--secondary {
+	border-color: $color-trypticon;
+	&:hover {
+		background-color: $color-trypticon;
+	}
+}
+
+// Secondary Inverse
+// -----------------------------------------------------------------------------
+
+.btn--outline.btn--secondary.btn--inverse {
+  border-color: $color-jetfire;
+}

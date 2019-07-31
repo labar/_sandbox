@@ -1,0 +1,43 @@
+// =============================================================================
+//
+// CONTAINER
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+.container {
+
+	// Base
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 rem(15);
+
+	// Transitions
+	transition: height $global-timing $global-easing;
+
+	// -- BREAKPOINTS
+
+  @include breakpoint($narrow) {
+    max-width: $container-width-narrow;
+  }
+
+  @include breakpoint($desktop) {
+    max-width: $container-width-desktop;
+  }
+
+  @include breakpoint($wide) {
+    max-width: $container-width-wide;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// FLUID CONTAINER
+// -----------------------------------------------------------------------------
+
+.container--fluid {
+  width: 100%;
+  padding: 0;
+}

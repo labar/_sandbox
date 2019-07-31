@@ -1,0 +1,96 @@
+// =============================================================================
+//
+// FOOTER
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+.footer {
+
+  // Base
+  width: 100%;
+  padding: rem(40) rem(20);
+  text-align: center;
+  font-size: rem(12);
+
+  // Skin
+  background-color: $color-trypticon;
+  color: $color-jetfire;
+
+  // For nav animation to work
+  position: relative;
+  right: 0;
+
+  // Transistions
+  transition: right $global-timing $global-easing;
+}
+
+// -----------------------------------------------------------------------------
+// NAV IS ON
+// -----------------------------------------------------------------------------
+
+.nav--is-on .footer {
+
+  // Calculate the width of the mobile menu minus the toggle button.
+  // Push the footer the width of the menu
+  right: calc(100% - #{$topbar-height});
+
+  // -- BREAKPOINTS
+
+  // Set the menu to a size that is not 100% like mobile
+  @include breakpoint($tablet-small) {
+    right: rem(320);
+  }
+
+  @include breakpoint($narrow) {
+    right: 0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// LOGO
+// -----------------------------------------------------------------------------
+
+.footer__logo {
+  display: inline-block;
+  height: rem(26);
+  opacity: 1;
+  transition: opacity $global-timing $global-easing;
+
+  &:hover {
+    opacity: .5;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// LINKS
+// -----------------------------------------------------------------------------
+
+.footer__links {
+  margin-top: rem(20);
+  margin-bottom: rem(20);
+}
+
+.footer__link-item {
+  display: inline-block;
+  margin: rem(7) rem(10);
+  font-size: rem(12);
+
+  a {
+    color: $color-jetfire;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// COMPANY INFO
+// -----------------------------------------------------------------------------
+
+.footer__company {
+  margin-top: rem(20);
+}

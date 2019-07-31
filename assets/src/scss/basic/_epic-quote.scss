@@ -1,0 +1,62 @@
+// =============================================================================
+//
+// EPIC QUOTE
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+.epic-quote {
+	position: relative;
+	font-family: $custom-font-2;
+	font-size: rem(22);
+	line-height: rem(30);
+	font-weight: 300;
+	padding: 0 rem(20);
+	color: $color-grimlock;
+
+	&:before {
+		content: '\201C';
+		position: absolute;
+		left: rem(-10);
+		top: rem(7);
+		color: $color-starscream;
+		font-size: rem(68);
+		font-family: $custom-font-2;
+		font-weight: 600;
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		font-size: rem(28);
+		line-height: rem(36);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// SIGNATURE
+// -----------------------------------------------------------------------------
+
+.epic-quote__sig {
+	padding-top: rem(20);
+	padding-bottom: rem(20);
+	font-family: $custom-font-1;
+	font-size: rem(16);
+	line-height: rem(24);
+	color: $color-trypticon;
+}
+
+// -----------------------------------------------------------------------------
+// SKINS
+// -----------------------------------------------------------------------------
+
+.epic-quote--ultramagnus:before {
+	color: $color-ultramagnus;
+}
+
+.epic-quote--bumblebee:before {
+	color: $color-bumblebee;
+}

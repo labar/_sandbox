@@ -1,0 +1,77 @@
+// =============================================================================
+//
+// HEADER
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BLOCK
+// -----------------------------------------------------------------------------
+// - Defaults to left alignment
+// -----------------------------------------------------------------------------
+
+.header {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+
+	margin-bottom: rem(30);
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		margin-bottom: rem(40);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// HEADING GROUP
+// -----------------------------------------------------------------------------
+
+// - use this when you need some space between a heading and content
+.heading-group {
+	margin-bottom: rem(20);
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		margin-bottom: rem(30);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// MODIFIERS
+// -----------------------------------------------------------------------------
+
+// Center
+// -----------------------------------------------------------------------------
+
+.header--center {
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: flex-start;
+	text-align: center;
+}
+
+// 2 Columns
+// -----------------------------------------------------------------------------
+
+.header--2-column {
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+// -----------------------------------------------------------------------------
+// OVERRIDES
+// -----------------------------------------------------------------------------
+
+// Divider
+// -----------------------------------------------------------------------------
+
+// - if divider is the last child in header parent remove bottom margin.
+// - this is for visual centering
+.header .divider--bumblebee:last-child {
+	margin-bottom: 0;
+}

@@ -1,0 +1,80 @@
+// =============================================================================
+//
+// PROGRESS DOTS
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// MODIFIERS
+// -----------------------------------------------------------------------------
+
+.progress-dots--center {
+  text-align: center;
+}
+
+// -----------------------------------------------------------------------------
+// DOT
+// -----------------------------------------------------------------------------
+
+.progress-dots__dot {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+  margin: 0 rem(5);
+  border: solid 2px $color-bumblebee;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: background-color $global-timing $global-easing;
+
+  // remove margin from first and last dot
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+
+  // dot and expanding bar active state
+  &.active {
+    background-color: $color-bumblebee;
+
+    &:before {
+      width: 17px;
+    }
+  }
+
+  // expanding bar between dots
+  &:before {
+    position: absolute;
+    width: 0px;
+    height: 6px;
+    top: 50%;
+    margin-top: -3px;
+    left: -18px;
+    content: '';
+    background-color: $color-bumblebee;
+    transition: width $global-timing $global-easing;
+  }
+
+  // remove the expanding bar from first dot
+  &:first-child:before {
+    display: none;
+  }
+
+  // -- BREAKPOINTS
+
+  @include breakpoint($tablet-small) {
+    margin: 0 rem(10);
+
+    &:before {
+      left: -28px;
+    }
+
+    &.active:before {
+      width: 27px;
+    }
+  }
+}

@@ -1,0 +1,176 @@
+// =============================================================================
+//
+// GRID-O-TRON
+//
+// - Currently just supports grid 12
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// GRIDS
+// -----------------------------------------------------------------------------
+
+.grids {
+	display: flex;
+  flex-flow: column nowrap; // Stack grids on mobile
+	align-items: stretch;
+  justify-content: flex-start;
+
+  &.grids--margins {
+    [class^="grid-"] {
+      margin-right: rem(0);
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // -- BREAKPOINTS
+
+  @include breakpoint($tablet) {
+    flex-direction: row; // side by side grids
+    flex-wrap: nowrap;
+
+    &.grids--margins [class^="grid-"] {
+      margin-right: rem(30);
+    }
+  }
+}
+
+// DON'T STACK
+// -----------------------------------------------------------------------------
+
+.grids--dont-stack {
+   flex-flow: row nowrap;
+
+   &.grids--margins {
+    [class^="grid-"] {
+      margin-right: rem(20);
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// MOBILE GRIDS
+// -----------------------------------------------------------------------------
+
+[class^="grid-"] {
+	width: 100%;
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+// -----------------------------------------------------------------------------
+// GRIDS
+// -----------------------------------------------------------------------------
+
+.grid-1 {
+
+	// -- BREAKPOINTS
+
+  @include breakpoint($tablet) {
+    width: 8.33333%;
+  }
+}
+
+.grid-2 {
+
+	// -- BREAKPOINTS
+
+  @include breakpoint($tablet) {
+    width: 16.66666%;
+  }
+}
+
+.grid-3 {
+
+	// -- BREAKPOINTS
+
+  @include breakpoint($tablet) {
+    width: 25%;
+  }
+}
+
+.grid-4 {
+
+	// -- BREAKPOINTS
+
+  @include breakpoint($tablet) {
+    width: 33.33333%;
+  }
+}
+
+.grid-5 {
+
+	// -- BREAKPOINTS
+
+  @include breakpoint($tablet) {
+    width: 41.66666%;
+  }
+}
+
+.grid-6 {
+
+	// -- BREAKPOINTS
+
+  @include breakpoint($tablet) {
+    width: 50%;
+  }
+}
+
+.grid-7 {
+
+	// -- BREAKPOINTS
+
+  @include breakpoint($tablet) {
+    width: 58.33333%;
+  }
+}
+
+.grid-8 {
+
+	// -- BREAKPOINTS
+
+  @include breakpoint($tablet) {
+    width: 66.66666%;
+  }
+}
+
+.grid-9 {
+
+	// -- BREAKPOINTS
+
+  @include breakpoint($tablet) {
+    width: 75%;
+  }
+}
+
+.grid-10 {
+
+	// -- BREAKPOINTS
+
+  @include breakpoint($tablet) {
+    width: 83.33333%;
+  }
+}
+
+.grid-11 {
+
+	// -- BREAKPOINTS
+
+  @include breakpoint($tablet) {
+    width: 91.66666%;
+  }
+}
+
+.grid-12 {
+
+	// -- BREAKPOINTS
+
+  @include breakpoint($tablet) {
+    width: 100%;
+  }
+}

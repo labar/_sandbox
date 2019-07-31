@@ -1,0 +1,36 @@
+// =============================================================================
+//
+// LOGO
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BLOCK
+// -----------------------------------------------------------------------------
+
+.logo {
+
+	// Base
+	display: block;
+	height: rem(26);
+
+	// Stop chrome opacity hover bug
+	transform: translateZ(0);
+
+	// Transition
+	opacity: 1;
+	transition: opacity $global-timing $global-easing;
+
+	// Accessibility: hover state is the same as focus. For now
+	outline: none;
+	&:hover,
+	&:focus {
+		opacity: .5;
+	}
+
+	// Constrain the size of the image and change display from inline to block for layout
+	img {
+		height: rem(26);
+		display: block;
+	}
+}

@@ -1,0 +1,47 @@
+// =============================================================================
+//
+// BUTTONS
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+.btn {
+
+	// Reset
+	appearance: none;
+	display: inline-block;
+	border: none;
+	font-size: rem(14);
+	font-family: $custom-font-1;
+	background-color: transparent;
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 0;
+
+	// Transition
+	transition: color 600ms $global-easing, background-color 600ms $global-easing;
+
+  // position relative for placement of loading spinner
+  position: relative;
+}
+
+// -----------------------------------------------------------------------------
+// STATE: Fluid Width
+// -----------------------------------------------------------------------------
+
+.btn--fluid {
+	width: 100%;
+}
+
+// -----------------------------------------------------------------------------
+// OVERRIDES
+// -----------------------------------------------------------------------------
+
+// remove link underline when anchor is a button
+a.btn {
+	text-decoration: none;
+}

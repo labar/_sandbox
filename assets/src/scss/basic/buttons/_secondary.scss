@@ -1,0 +1,22 @@
+
+// -----------------------------------------------------------------------------
+// SECONDARY
+// -----------------------------------------------------------------------------
+
+.btn--secondary {
+	padding: rem(14) rem(24);
+	background-color: $color-trypticon;
+	color: $color-jetfire;
+	&:hover {
+		background-color: $color-hotrod;
+		color: $color-jetfire;
+	}
+}
+
+// INVERSE
+// -----------------------------------------------------------------------------
+
+.btn--secondary.btn--inverse {
+  background-color: $color-jetfire;
+  color: $color-trypticon;
+}

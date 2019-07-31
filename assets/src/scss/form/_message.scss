@@ -1,0 +1,81 @@
+// =============================================================================
+//
+// MESSAGE
+//
+// -----------------------------------------------------------------------------
+// 1. Create message element
+// 2. Show message when alert mod is enabled
+// 3. Inverted message
+// 4. Animation
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// 1. Create message element
+// -----------------------------------------------------------------------------
+
+.form-field__message {
+	position: absolute;
+	padding: rem(2) rem(5);
+	background-color: $color-starscream;
+	font-size: rem(12);
+	color: $color-trypticon;
+	bottom: rem(-21);
+	width: 100%;
+	font-style: italic;
+	display: none;
+	overflow: hidden; // for animation slide-open. hides message
+}
+
+// -----------------------------------------------------------------------------
+// 2. Show message when alert mod is enabled
+// -----------------------------------------------------------------------------
+
+// normal form
+.alert .form-field__message {
+	display: block;
+	animation-name: slide-open;
+  animation-duration: $global-timing;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+}
+
+// compressed form
+.form--compressed .alert .form-field__message {
+	display: block;
+	animation-name: slide-open-compressed;
+  animation-duration: $global-timing;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+}
+
+// -----------------------------------------------------------------------------
+// 3. Inverted message
+// -----------------------------------------------------------------------------
+
+.form-field__message--invert {
+	background-color: $color-trypticon;
+	color: $color-jetfire;
+	font-weight: bold;
+}
+
+// -----------------------------------------------------------------------------
+// 4. Animation
+// -----------------------------------------------------------------------------
+
+@keyframes slide-open {
+  from {
+    height: 0px;
+  }
+  to {
+    height: rem(21);
+  }
+}
+
+@keyframes slide-open-compressed {
+  from {
+    height: 0px;
+  }
+  to {
+    height: rem(27);
+  }
+}

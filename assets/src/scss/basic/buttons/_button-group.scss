@@ -1,0 +1,59 @@
+
+// -----------------------------------------------------------------------------
+// BUTTON GROUP
+// -----------------------------------------------------------------------------
+
+.btn-group {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+
+  border: solid 2px $color-grimlock;
+  border-radius: 4px;
+
+  .btn {
+    display: block;
+    padding: rem(7) rem(14);
+    background-color: transparent;
+    color: $color-grimlock;
+    border-right: solid 2px $color-grimlock;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:hover,
+    &.active,
+    &.btn--active {
+      background-color: $color-grimlock;
+      color: $color-jetfire;
+    }
+  }
+
+  // -- BREAKPOINTS
+
+  @include breakpoint($tablet-small) {
+    .btn {
+      padding: rem(13) rem(26);
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// INVERSE GROUP
+// -----------------------------------------------------------------------------
+
+.btn-group--inverse {
+  border-color: $color-jetfire;
+  .btn {
+    color: $color-jetfire;
+    border-color: $color-jetfire;
+    &:hover,
+    &.active,
+    &.btn--active {
+      background-color: $color-jetfire;
+      color: $color-trypticon;
+    }
+  }
+}

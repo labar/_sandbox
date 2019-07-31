@@ -1,0 +1,68 @@
+// =============================================================================
+//
+// BASE
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// FORM FIELD
+// -----------------------------------------------------------------------------
+
+.form-field {
+
+	// Position set to relative for positioning of the help text
+	position: relative;
+
+	// Add some space between stacked elements
+	margin-bottom: rem(24);
+
+	// font family not cascading from body for form elements
+	font-family: $custom-font-1;
+}
+
+// -----------------------------------------------------------------------------
+// LABEL
+// -----------------------------------------------------------------------------
+
+.form-field__label,
+.fieldset__label {
+	color: $color-trypticon;
+	cursor: pointer;
+	display: block;
+	margin-left: rem(10);
+	margin-bottom: rem(10);
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: rem(14);
+}
+
+// INVERSE
+// -----------------------------------------------------------------------------
+
+.form-field--inverse .form-field__label,
+.form-field--inverse .fieldset__label {
+  color: $color-jetfire;
+}
+
+// -----------------------------------------------------------------------------
+// INLINE FIELDS
+// -----------------------------------------------------------------------------
+
+.form-field--inline,
+.fieldset--inline {
+	display: inline-block;
+	margin-right: rem(20);
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// IE FIXES
+// -----------------------------------------------------------------------------
+
+// hide the IE arrow
+select::-ms-expand {
+	display: none;
+}

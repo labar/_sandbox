@@ -1,0 +1,38 @@
+
+// -----------------------------------------------------------------------------
+// WATCH VIDEO BUTTON
+// -----------------------------------------------------------------------------
+
+.watch-video {
+	cursor: pointer;
+	appearance: none;
+	background-color: transparent;
+	border: none;
+	color: $color-jetfire;
+	margin-top: rem(10);
+	padding: 0;
+	.span {
+		display: inline-block;
+		vertical-align: middle;
+		font-size: rem(20);
+	}
+	.fs {
+		font-size: rem(45);
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: rem(8);
+		margin-right: rem(8);
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		margin-top: rem(20);
+		.span {
+			font-size: rem(22);
+		}
+		.fs {
+			font-size: rem(52);
+		}
+	}
+}

@@ -1,0 +1,138 @@
+// =============================================================================
+//
+// TOGGLES (v1 depreciated)
+//
+// =============================================================================
+
+.form-field__toggle {
+  cursor: pointer;
+  display: inline-block;
+}
+
+// position the native toggle off the screen
+.form-field__toggle [type="radio"] {
+  position: absolute;
+  left: -1000em;
+}
+
+// custom toggle
+.form-field__toggle-custom {
+
+  // Base
+  padding: rem(4) rem(20);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: rem(14);
+  margin-right: 0;
+
+  // Border
+  border: solid 2px $color-trypticon;
+  color: $color-trypticon;
+  cursor: pointer;
+  box-sizing: content-box;
+
+  // Radius
+  $toggle-border-radius: rem(20);
+  border-top-radius:    $toggle-border-radius;
+  border-right-radius:  $toggle-border-radius;
+  border-bottom-radius: $toggle-border-radius;
+  border-left-radius:   $toggle-border-radius;
+
+  // Transitions
+  transition: background-color $global-timing $global-easing,
+  color $global-timing $global-easing,
+  border-color $global-timing $global-easing;
+
+  // States
+  &:hover {
+    background-color: $color-trypticon;
+    color: $color-jetfire;
+  }
+
+  // -- BREAKPOINTS
+
+  @include breakpoint($mobile-large) {
+    // Remove margin from the last toggle
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @include breakpoint($narrow) {
+    padding: rem(7) rem(36);
+    font-size: rem(16);
+    margin-right: rem(8);
+  }
+}
+
+// custom toggle state checked
+.form-field__toggle-input:checked + .form-field__toggle-custom {
+  border-color: $color-trypticon;
+  background-color: $color-trypticon;
+  color: $color-jetfire;
+}
+
+// custom toggle state focus
+.form-field__toggle-input:focus + .form-field__toggle-custom {
+  // border-color: $color-bumblebee;
+  background-color: $color-trypticon;
+}
+
+// -----------------------------------------------------------------------------
+// ALTERNATE - LIGHT
+// -----------------------------------------------------------------------------
+
+.form-field__toggle--light {
+  .form-field__toggle-custom {
+    border-color: $color-jetfire;
+    color: $color-jetfire;
+  }
+  .form-field__toggle-input:checked + .form-field__toggle-custom {
+    background-color: $color-jetfire;
+    color: $color-trypticon;
+  }
+}
+
+// =============================================================================
+//
+// TOGGLE V2
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// MODIFIER
+// -----------------------------------------------------------------------------
+
+$formFieldToggleBorderRadius: 4px;
+
+// wrap toggles - similar to btn-bar
+.form-field__toggles {
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  // override v1 uppercase and border
+  .form-field__toggle-custom {
+    text-transform: none;
+    border-right-width: 1px;
+    border-left-width: 1px;
+  }
+
+  // override v1 borders
+  > :first-child .form-field__toggle-custom {
+    border-left-width: 2px;
+    border-top-left-radius: $formFieldToggleBorderRadius;
+    border-bottom-left-radius: $formFieldToggleBorderRadius;
+  }
+  > :last-child .form-field__toggle-custom {
+    border-right-width: 2px;
+    border-top-right-radius: $formFieldToggleBorderRadius;
+    border-bottom-right-radius: $formFieldToggleBorderRadius;
+  }
+  > :only-child .form-field__toggle-custom {
+    border-right-width: 2px;
+    border-radius: $formFieldToggleBorderRadius;
+  }
+}

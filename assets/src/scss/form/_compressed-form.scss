@@ -1,0 +1,43 @@
+// =============================================================================
+//
+// COMPRESSED FORM
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASIC
+// -----------------------------------------------------------------------------
+
+.form--compressed {
+
+	.form-field {
+		margin-bottom: rem(10);
+	}
+
+	.form-field__label {
+		margin-bottom: rem(5);
+	}
+
+	.form-field__input,
+	.form-field__select select {
+		padding: rem(5) rem(10);
+	}
+
+	.form-field__select:after {
+		bottom: rem(8);
+	}
+
+	.form-field--select.alert:after,
+	.form-field--input.alert:after {
+		bottom: rem(33);
+	}
+
+	.form-field__message {
+		padding: rem(5) rem(10);
+	}
+
+	.alert .form-field__message {
+		position: relative;
+		bottom: auto;
+	}
+}

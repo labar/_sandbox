@@ -1,0 +1,43 @@
+// =============================================================================
+//
+// (into) THE PIT
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+.the-pit {
+
+	// Chrome bug that causes the height js to not work properly because of the
+	// margins on headers
+	overflow: hidden;
+
+	// Enable position relative for nav push animation
+	position: relative;
+	right: 0;
+
+	// Set display to block for proper IE rendering
+	display: block;
+
+	// Transition
+	transition: right $global-timing $global-easing;
+}
+
+.nav--is-on .the-pit {
+	// Calculate the width of the mobile menu minus the toggle button.
+	// Push the pit the width of the menu
+	right: calc(100% - #{$topbar-height});
+
+	// -- BREAKPOINT
+
+	// Set the menu to a size that is not 100% like mobile
+	@include breakpoint($tablet-small) {
+		right: rem(320);
+	}
+
+	@include breakpoint($narrow) {
+		right: 0;
+	}
+}

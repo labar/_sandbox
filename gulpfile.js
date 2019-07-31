@@ -2,15 +2,20 @@
 // PLUGINS
 // -----------------------------------------------------------------------------
 
-var gulp         = require('gulp');
-var sass         = require('gulp-sass');
+var gulp         = require('gulp'),
+    sass         = require('gulp-sass'),
+    postcss      = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
+    cssnano      = require('cssnano'),
+    sourcemaps   = require('gulp-sourcemaps'),
+    browserSync  = require('browser-sync').create();
 
 // -----------------------------------------------------------------------------
 // TARGETS
 // -----------------------------------------------------------------------------
 
-var sourceSass   = './assets/src/scss/**/*.scss';
-var targetSass   = './assets/css';
+var sourceSass   = './assets/src/scss/**/*.scss',
+    targetSass   = './assets/css';
 
 // -----------------------------------------------------------------------------
 // TASK: STYLE
@@ -19,15 +24,28 @@ var targetSass   = './assets/css';
 function style() {
   return (
     gulp
-      // get the source files
+
+      // Get the source files
       .src(sourceSass)
+
+      // Initialize sourcemaps before compilation starts
+      .pipe(sourcemaps.init())
 
       // Use sass with the files found, and log any errors
       .pipe(sass())
-      .on("error", sass.logError)
+      .on('error', sass.logError)
 
-      // What is the destination for the compiled file?
+      // Use postcss with autoprefixer and compress the compiled file using cssnano
+      .pipe(postcss([autoprefixer(), cssnano()]))
+
+      // add/write the sourcemaps
+      .pipe(sourcemaps.write())
+
+      // Destination for the compiled file
       .pipe(gulp.dest(targetSass))
+
+      // Add browsersync stream pipe after compilation
+      .pipe(browserSync.stream())
   );
 }
 
@@ -39,9 +57,12 @@ exports.style = style;
 // -----------------------------------------------------------------------------
 
 function watch(){
-  // gulp.watch takes in the location of the files to watch for changes
-  // and the name of the function we want to run on change
-  gulp.watch(sourceSass, style)
+
+  // Add browsersync initialization at the start of the watch task
+  browserSync.init({
+    proxy: 'sandbox.labar'
+  });
+  gulp.watch(sourceSass, style);
 }
 
 // Don't forget to expose the task!

@@ -1,0 +1,104 @@
+// =============================================================================
+//
+// INPUT
+// *** probz should rename this to text
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// TEXT INPUT
+// -----------------------------------------------------------------------------
+
+.form-field__input {
+	width: 100%;
+	margin: 0;
+	padding: rem(7) rem(10);
+	padding-right: rem(40); // make room for icon if text overflows
+	font-size: rem(16);
+	color: $color-trypticon;
+	border: solid 1px $color-megatron;
+	border-top-color: transparent;
+	border-right-color: transparent;
+	outline: none;
+	box-shadow: 0 0 2px 2px rgba($color-hotrod,0);
+	transition: all $global-timing $global-easing;
+
+	&:hover,
+	&:focus {
+		border: solid 1px $color-bumblebee;
+		background-color: $color-starscream;
+	}
+}
+
+// INVERSE
+// -----------------------------------------------------------------------------
+
+.form-field--inverse .form-field__input {
+  background-color: transparent;
+}
+
+// ALERT
+// -----------------------------------------------------------------------------
+
+// add thicker borders and background color on alert
+.alert .form-field__input {
+	border: solid 1px $color-bumblebee;
+	background-color: $color-starscream;
+	box-shadow: inset 0 0 0px 1px rgba($color-bumblebee,1);
+}
+
+// ALERT ICON
+// -----------------------------------------------------------------------------
+
+// creates warning icon that is displayed when form field has alerts enabled
+.form-field--input.alert:after {
+	content: $fs-alert;
+	bottom: rem(8);
+	right: rem(8);
+	color: $color-bumblebee;
+	font-size: rem(20);
+	font-family: $iconakron !important;
+  position: absolute;
+  z-index: $z-index-1;
+}
+
+// -----------------------------------------------------------------------------
+// STATES
+// -----------------------------------------------------------------------------
+
+// FOCUS
+// -----------------------------------------------------------------------------
+
+.form-field--inverse .form-field__input:hover,
+.form-field--inverse .form-field__input:focus {
+  background-color: $color-jetfire;
+}
+
+// DISABLED
+// -----------------------------------------------------------------------------
+
+.form-field__input:hover:disabled {
+  border-color: $color-megatron;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  background-color: transparent;
+  cursor: not-allowed !important;
+}
+
+// -----------------------------------------------------------------------------
+// SKINS
+// -----------------------------------------------------------------------------
+
+.alert--red {
+
+	// field
+	.form-field__input {
+		border-color: $color-hordak;
+		box-shadow: inset 0 0 0px 1px rgba($color-hordak,1);
+	}
+
+	// icon
+	&.form-field--input.alert:after {
+		color: $color-hordak;
+	}
+}

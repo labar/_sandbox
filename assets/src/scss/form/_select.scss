@@ -1,0 +1,83 @@
+// =============================================================================
+//
+// SELECT
+//
+// -----------------------------------------------------------------------------
+// 1. Style the field and create hover and focus state
+// 2. Create dropdown arrow
+// 3. Hide dropdown arrow when alert mod is active
+// 4. Style the input when alert mod is active
+// 5. Create warning icon
+// =============================================================================
+
+// 1. Style the field and create hover and focus state
+// -----------------------------------------------------------------------------
+
+.form-field__select select {
+	appearance: none;
+	cursor: pointer;
+	outline: none;
+	width: 100%;
+	padding: rem(7) rem(40) rem(7) rem(10);
+	border-radius: 0;
+	border: solid 1px $color-megatron;
+	border-top-color: transparent;
+	border-right-color: transparent;
+	font-size: rem(16);
+	background-color: $color-jetfire;
+	color: $color-trypticon;
+	transition: background-color $global-timing $global-easing, border-color $global-timing $global-easing;
+
+	&:hover,
+	&:focus {
+		background-color: $color-starscream;
+		border-color: $color-bumblebee;
+		outline: none;
+	}
+}
+
+// 2. Create dropdown arrow
+// -----------------------------------------------------------------------------
+
+.form-field__select:after {
+	font-family: $iconakron !important;
+	font-size: rem(10);
+  position: absolute;
+  z-index: $z-index-1;
+	content: $fs-arrow-down;
+	bottom: rem(10);
+	right: rem(10);
+	color: $color-bumblebee;
+
+	pointer-events: none;
+}
+
+// 3. Hide dropdown arrow when alert mod is active
+// -----------------------------------------------------------------------------
+
+.alert .form-field__select:after {
+	display: none;
+}
+
+// 4. Style the input when alert mod is active
+// -----------------------------------------------------------------------------
+
+.alert .form-field__select select {
+	border: solid 1px $color-bumblebee;
+	background-color: $color-starscream;
+	box-shadow: inset 0 0 0px 1px rgba($color-bumblebee,1);
+}
+
+// 5. Create warning icon
+// -----------------------------------------------------------------------------
+
+.form-field--select.alert:after {
+	content: $fs-alert;
+	bottom: rem(8);
+	right: rem(8);
+	color: $color-bumblebee;
+	font-size: rem(20);
+	font-family: $iconakron !important;
+  position: absolute;
+  z-index: $z-index-1;
+}

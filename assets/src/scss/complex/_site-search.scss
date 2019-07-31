@@ -1,0 +1,208 @@
+// =============================================================================
+//
+// SEARCH
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+.site-search {
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		display: inline-block;
+		position: relative;
+		vertical-align: middle;
+	}
+
+}
+
+// -----------------------------------------------------------------------------
+// BUTTON
+// -----------------------------------------------------------------------------
+
+.site-search__button {
+
+	// Hide this on mobile
+	display: none;
+	visibility: hidden;
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+
+		padding: rem(10);
+
+		// Show on narrow and up
+		display: block;
+		visibility: visible;
+
+		// At some point I want to make this use the .btn class
+		appearance: none;
+		font-size: rem(16);
+		color: $color-bumblebee;
+		background-color: transparent;
+		border: none;
+		margin: 0;
+		cursor: pointer;
+		outline: none;
+
+		i {
+			vertical-align: middle;
+			transition: color $global-timing $global-easing;
+			font-size: rem(16);
+		}
+
+		// Hover and Focus states
+		&:hover i,
+		&:focus i {
+			color: $color-trypticon;
+		}
+	}
+}
+
+// -----------------------------------------------------------------------------
+// PANEL
+// -----------------------------------------------------------------------------
+
+.site-search__panel {
+
+	// Remove the initial padding so content lines up
+	.container {
+		padding: 0;
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		position: fixed;
+		right: 0;
+		top: $metabar-height;
+		overflow: hidden;
+		background-color: $color-starscream;
+		width: 0;
+		height: $topbar-height-large;
+		transition: width $global-timing $global-easing, height $global-timing $global-easing;
+
+		.container {
+			height: 100%;
+			padding: 0 rem(15);
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		i {
+			font-size: rem(12);
+		}
+	}
+}
+
+// SHRINK
+// -----------------------------------------------------------------------------
+
+.shrink .site-search__panel {
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		height: $topbar-height;
+	}
+}
+
+// Search IS ON
+// -----------------------------------------------------------------------------
+
+.search--is-on .site-search__panel {
+	width: 100%;
+}
+
+// -----------------------------------------------------------------------------
+// INPUT FIELD
+// -----------------------------------------------------------------------------
+
+.site-search__field-group {
+	width: 100%;
+}
+
+.site-search__field {
+
+	width: 100%;
+	padding: rem(14) rem(50) rem(14) rem(15);
+	font-size: rem(18);
+	border: solid 1px $color-megatron;
+	border-left: none;
+	border-right: none;
+	position: relative;
+	outline: none;
+	color: $color-skywarp;
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		padding: rem(20) rem(50) rem(20) rem(25);
+		font-size: rem(16);
+		visibility: hidden;
+		border: none;
+		background-color: transparent;
+		outline: none;
+		transition: padding $global-timing $global-easing;
+
+		&:focus {
+			border-bottom: solid 1px $color-megatron;
+		}
+	}
+}
+
+.search--is-on .site-search__field {
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		visibility: visible;
+	}
+}
+
+// SHRINK
+// -----------------------------------------------------------------------------
+
+.shrink .site-search__field {
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		padding: rem(5) rem(10);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// SUBMIT BUTTON - For accessibility
+// -----------------------------------------------------------------------------
+
+// This is for positioning of the button
+#search_form {
+	position: relative;
+}
+
+.site-search__submit-button {
+	position: absolute;
+	right: 0px;
+	top: 50%;
+	margin-top: rem(-18);
+
+	i {
+		color: $color-skywarp;
+		font-size: rem(16);
+		padding: 0;
+		margin: 0;
+		padding: rem(10) rem(10);
+	}
+	&:hover i,
+	&:focus i {
+		color: $color-bumblebee;
+	}
+}

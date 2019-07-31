@@ -1,0 +1,137 @@
+// =============================================================================
+//
+// TOPBAR
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// TOPBAR
+// 1. Container
+// 2. Shrink Modifier
+// -----------------------------------------------------------------------------
+
+.topbar {
+
+	// Base
+	height: $topbar-height;
+	width: 100%;
+
+	// fixed position
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: $z-index-8;
+
+	// Skin
+	background-color: $color-jetfire;
+	border-bottom: solid rem(1) $color-megatron;
+
+	// Shadow
+	box-shadow: 0px 0px 2px rgba(0,0,0,.2);
+
+	// Transition
+	transition: height $global-timing $global-easing;
+
+	// Reset Box Sizing so the the border doesn't get lost with the burger menu
+	box-sizing: initial;
+
+	// 1. Container
+	// ---------------------------------------------------------------------------
+
+	> .container {
+
+		// Base
+		height: $topbar-height;
+		position: relative;
+
+		// Remove padding from the right for Whopper alignment
+		padding-right: 0;
+
+		// Flexbox
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: space-between;
+
+		// -- BREAKPOINTS
+
+		@include breakpoint($narrow) {
+			padding-right: rem(15);
+		}
+	}
+
+	// 2. Shrink Modifier
+	// ---------------------------------------------------------------------------
+
+	&.shrink {
+		height: $topbar-height;
+		> .container {
+			height: $topbar-height;
+		}
+	}
+
+	// -- BREAKPOINTS
+
+  @include breakpoint($narrow) {
+  	height: $topbar-height-large;
+  	> .container {
+  		height: $topbar-height-large;
+  	}
+  }
+}
+
+// -----------------------------------------------------------------------------
+// WHOPPER (menu toggle)
+// -----------------------------------------------------------------------------
+
+.whopper {
+
+	// Make the button the same dimensions as the topbar
+	width: $topbar-height;
+	height: $topbar-height;
+
+	// Remove default button padding
+	padding: 0;
+
+	// Remove outline from button
+	outline: none;
+
+	cursor: pointer;
+
+	// This is set to 3 because of how tabbing works with the order of elements.
+	// There is a display issue in one of the browsers if whopper goes at the end.
+	order: 3;
+
+	i {
+		font-size: rem(15);
+		color: $color-bumblebee;
+	}
+
+	&:hover,
+	&:focus {
+		color: $color-skywarp;
+		background-color: $color-starscream;
+	}
+}
+
+// Nav ON
+// -----------------------------------------------------------------------------
+
+.nav--is-on .topbar {
+
+	.whopper {
+		background-color: $color-megatron;
+		i {
+			color: $color-trypticon;
+		}
+	}
+}
+
+// -----------------------------------------------------------------------------
+// HIDDEN TEXT
+// -----------------------------------------------------------------------------
+
+.hidden-text {
+	position: absolute;
+	top: -200px;
+}

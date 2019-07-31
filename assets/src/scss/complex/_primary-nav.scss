@@ -1,0 +1,405 @@
+// =============================================================================
+//
+// PRIMARY NAV
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+.primary-nav {
+
+	// Make sure there is room for the WHOPPER! menu button
+	width: calc(100% - #{$topbar-height});
+
+	// Position and size
+	height: calc(100% - #{$topbar-height});
+	position: fixed;
+	top: $topbar-height;
+	right: calc(-100% + #{$topbar-height});
+
+	// Overflow
+	overflow-y: auto;
+
+	// Skin
+	background-color: $color-starscream;
+
+	// Initial visibility
+	visibility: hidden;
+
+	// Transition
+	transition: right $global-timing $global-easing, visibility $global-timing, transform $global-timing $global-easing;
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($tablet-small) {
+		width: rem(320);
+		right: rem(-320);
+	}
+
+  @include breakpoint($narrow) {
+
+  	// Reset Width
+  	width: auto;
+  	height: auto;
+  	max-width: initial;
+  	right: auto;
+  	top: auto;
+
+  	// Make nav visible
+  	visibility: visible;
+
+  	// Reset position of the nav
+  	position: relative;
+
+  	background-color: transparent;
+  }
+}
+
+// NAV IS ON
+// -----------------------------------------------------------------------------
+
+.nav--is-on .primary-nav {
+
+	// Move from off-canvas to on
+	right: 0;
+
+	// Make Primary Nav visible
+	visibility: visible;
+
+	// Shadow
+	box-shadow: rem(0) rem(4) rem(4) 0 rgba(0,0,0,.3);
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		box-shadow: none;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// BODY CLASS
+// -----------------------------------------------------------------------------
+
+// This stops the page from scrolling on desktop when the nav is open
+.nav--is-on {
+	overflow: hidden;
+}
+
+// -----------------------------------------------------------------------------
+// SHRINK
+// -----------------------------------------------------------------------------
+
+.shrink {
+	.primary-nav .primary-nav__dropdown {
+		top: $topbar-height + $metabar-height;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// NAV BLOCK
+// -----------------------------------------------------------------------------
+
+.primary-nav__block {
+
+	width: 100%;
+
+	border-top: solid rem(1) $color-megatron;
+	border-bottom: solid rem(1) $color-jetfire;
+	color: $color-megatron;
+
+	// -- BREAKPOINTS
+
+  @include breakpoint($narrow) {
+  	width: auto;
+  	padding: 0 rem(10);
+  	border: none;
+  	display: inline-block;
+  	vertical-align: middle;
+  }
+
+  @include breakpoint($desktop) {
+  	padding: 0 rem(15);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// NAV BUTTON
+// -----------------------------------------------------------------------------
+
+.primary-nav__button,
+.primary-nav__link {
+
+	// Base
+	padding: rem(14) rem(15) rem(14) rem(15);
+	margin: 0;
+	text-align: left;
+	width: 100%;
+	display: block;
+
+	// Used to style the native button element
+	border: none;
+	font-size: rem(18);
+	cursor: pointer;
+	font-family: 'Open Sans';
+	appearance: none;
+	transition: color $global-timing $global-easing;
+
+	// Skin
+	background-color: $color-starscream;
+	color: $color-trypticon;
+
+	// For positioning the icon on off-canvas menu
+	position: relative;
+
+	// Dropdown Indicator Icon
+	> i {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		width: rem(45);
+		height: 100%;
+		line-height: rem(52);
+		text-align: center;
+		vertical-align: middle;
+		font-size: rem(8);
+		color: $color-hotrod;
+		background-color: $color-jetfire;
+		transform-origin: center;
+		transform: rotateZ(0deg);
+		transition: color $global-timing $global-easing;
+	}
+
+	// Hover Color
+	&:hover {
+		color: $color-bumblebee;
+		> i {
+			color: $color-bumblebee;
+		}
+	}
+
+	// Change focus outline
+	&:focus,
+	&.active {
+		color: $color-bumblebee;
+		outline: none;
+		> i {
+			color: $color-bumblebee;
+			background-color: $color-trypticon;
+		}
+	}
+	// Only rotate when active
+	&.active > i {
+		transform: rotateZ(180deg);
+	}
+
+	// -- BREAKPOINTS
+
+  // NARROW
+  @include breakpoint($narrow) {
+  	font-size: rem(14);
+  	padding: 0;
+  	background-color: transparent;
+
+  	> i {
+  		// padding-left: rem(5);
+  		padding: rem(5);
+  		position: static;
+  		top: auto;
+  		right: auto;
+  		height: auto;
+  		width: auto;
+  		display: inline-block;
+  		line-height: normal;
+  		transition: transform $global-timing $global-easing;
+  		&:before {
+  			margin: auto;
+  		}
+  	}
+
+  	&:focus,
+  	&.active {
+  		> i {
+  			background-color: transparent;
+  		}
+  	}
+  }
+}
+
+// -----------------------------------------------------------------------------
+// DROPDOWN
+// -----------------------------------------------------------------------------
+
+.primary-nav__dropdown {
+
+	// Initial visibility hidden
+	overflow: hidden;
+	display: none;
+
+	padding-bottom: rem(20);
+
+	// Skin
+	background-color: $color-trypticon;
+	color: $color-jetfire;
+
+	transition: top $global-timing $global-easing;
+
+	.container {
+		padding: 0;
+	}
+
+	// -- BREAKPOINTS
+
+  @include breakpoint($narrow) {
+
+  	// Base
+		width: 100%;
+		margin: 0;
+		overflow: hidden;
+		list-style: none;
+		padding-bottom: 0;
+
+		// Position
+		position: fixed;
+		left: 0;
+  	top: $topbar-height-large;
+
+    box-shadow: 0px 2px 2px rgba(0,0,0,.3);
+
+  	.container {
+  		padding: 0 rem(15);
+  	}
+  }
+}
+
+// adjust height when metabar is on
+.snake-mountain--metabar .primary-nav__dropdown {
+	@include breakpoint($narrow) {
+  	top: $topbar-height-large + $metabar-height;
+	}
+
+}
+
+// Menu Item
+// -----------------------------------------------------------------------------
+
+.primary-nav__dropdown-item {
+
+	position: relative; // for position of the border effect
+	margin: 0;
+
+	&:hover a:after {
+		width: 4px;
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		display: inline-block;
+		padding: 0;
+		margin-right: rem(20);
+		&:last-child {
+			margin-right: 0;
+		}
+		&:hover a:after {
+			height: 4px;
+			width: 100%;
+		}
+	}
+
+	@include breakpoint($desktop) {
+		margin-right: rem(40);
+	}
+}
+
+// Menu Link
+// -----------------------------------------------------------------------------
+
+.primary-nav__dropdown-link {
+
+	color: $color-jetfire;
+	font-size: rem(14);
+	padding: rem(10) rem(12);
+	display: block;
+	text-align: left;
+	position: relative;
+
+	// Create the bottom border effect
+	&:after {
+		height: 100%;
+		width: 0;
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		content: "";
+		box-sizing: initial;
+		background-color: $color-bumblebee;
+		transition: width $global-timing $global-easing, height $global-timing $global-easing;
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		padding: rem(10) 0;
+
+		&:after {
+			height: 0px;
+			width: 100%;
+			top: auto;
+			bottom: 0px;
+			left: 0px;
+		}
+	}
+
+	@include breakpoint($desktop) {
+		font-size: rem(16);
+	}
+}
+
+// Title
+// -----------------------------------------------------------------------------
+
+.primary-nav__dropdown-title {
+
+	padding: rem(15);
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		padding: rem(30) rem(15) rem(7) 0;
+	}
+}
+
+// Title Link
+// -----------------------------------------------------------------------------
+
+.primary-nav__dropdown-title-link {
+	font-size: rem(18);
+	color: $color-bumblebee;
+	position: relative;
+
+	i {
+		padding-left: rem(30);
+		font-size: rem(12);
+		opacity: 0;
+		transition: padding $global-timing $global-easing .25s, opacity $global-timing $global-easing .25s;
+	}
+
+	&:hover {
+		color: $color-jetfire;
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($desktop) {
+		font-size: rem(22);
+	}
+}
+
+// Animate the Icon
+.dropdown--is-on .primary-nav__dropdown-title-link i {
+	padding-left: rem(5);
+	opacity: 1;
+}

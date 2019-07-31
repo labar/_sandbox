@@ -10,7 +10,7 @@
 
 // padding and margins does not affect the width and height of elements
 *, *:before, *:after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 // -----------------------------------------------------------------------------
@@ -37,19 +37,51 @@ a {
 
 html {
 
-  // This stops the annoying font-bold effect in dropdowns of primary nav
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	// This stops the annoying font-bold effect in dropdowns of primary nav
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 body {
 
-  // Base
-  font-size: $font-size;
-  font-family: $custom-font-1;
-  margin: 0;
-  width: 100%;
+	// Base
+	font-size: $font-size;
+	font-family: $custom-font-1;
+	margin: 0;
+	width: 100%;
 
-  // Skin
-  background-color: $color-jetfire;
+	// Skin
+	background-color: $color-jetfire;
+
+}
+
+// -----------------------------------------------------------------------------
+// LINKS
+// -----------------------------------------------------------------------------
+
+a {
+
+	// Base
+	text-decoration: none;
+	color: $color-rodimus;
+	opacity: 1;
+	cursor: pointer;
+
+	// Transition
+	transition: opacity $global-timing $global-easing, color $global-timing $global-easing;
+}
+
+// underline links in paragraphs
+p a {
+	text-decoration: underline;
+}
+
+// -----------------------------------------------------------------------------
+// IMAGES
+// -----------------------------------------------------------------------------
+
+// change images from inline-block to block and remove borders
+img {
+	display: block;
+	border: none;
 }

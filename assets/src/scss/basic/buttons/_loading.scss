@@ -1,0 +1,53 @@
+
+// -----------------------------------------------------------------------------
+// LOADING
+// -----------------------------------------------------------------------------
+
+.btn--loading {
+
+  min-height: rem(14);
+  color: transparent;
+
+  // ripped from semantic ui because of time contraint
+  &:before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    margin: rem(-10) 0 0 rem(-10);
+    width: rem(20);
+    height: rem(20);
+    border-radius: 500rem;
+    border: 2px solid rgba($color-skywarp,.15);
+  }
+  &:after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    margin: rem(-10) 0 0 rem(-10);
+    width: rem(20);
+    height: rem(20);
+    animation: button-spin .6s linear;
+    animation-iteration-count: infinite;
+    border-radius: 500rem;
+    border-color: $color-jetfire transparent transparent;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: 0 0 0 1px transparent;
+  }
+
+  &:hover {
+    color: transparent;
+    cursor: not-allowed;
+  }
+}
+
+@keyframes button-spin {
+  from {
+    transform:rotate(0);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}

@@ -1,0 +1,138 @@
+// =============================================================================
+//
+// DEV TOOLS
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+.dev-tools {
+	position: fixed;
+	bottom: rem(15);
+	right: rem(15);
+	background-color: $color-skywarp;
+	padding: rem(15) rem(40);
+	display: block;
+	opacity: 0.8;
+	z-index: $z-index-10;
+	box-shadow: 0 4px 6px 0px rgba($color-skywarp,0.6);
+  color: $color-jetfire;
+  font-size: rem(13);
+  border-radius: 3px;
+  transition: all $global-timing $global-easing;
+}
+
+// -----------------------------------------------------------------------------
+// BP MONITOR
+// -----------------------------------------------------------------------------
+
+.bp-monitor {
+  font-weight: bold;
+}
+
+.bp-monitor span:after {
+  content: 'MOBILE';
+  display: inline-block;
+  font-weight: normal;
+  color: $color-megatron;
+
+  // -- BREAKPOINTS
+
+  @include breakpoint($mobile-large) {
+    content: 'MOBILE LARGE'
+  }
+  @include breakpoint($tablet-small) {
+    content: 'TABLET SMALL'
+  }
+  @include breakpoint($tablet) {
+    content: 'TABLET'
+  }
+  @include breakpoint($narrow) {
+    content: 'NARROW'
+  }
+  @include breakpoint($desktop) {
+    content: 'DESKTOP'
+  }
+  @include breakpoint($wide) {
+    content: 'WIDE'
+  }
+}
+
+// -----------------------------------------------------------------------------
+// FABRICATOR
+// -----------------------------------------------------------------------------
+
+// ICON GRID
+// -----------------------------------------------------------------------------
+
+.icon-grid {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+// VISIBLE GRID
+// -----------------------------------------------------------------------------
+
+.f-container .grids [class^="grid-"],
+.dev-visible-grids [class^="grid-"] {
+	background-color: $color-starscream;
+	padding: rem(10);
+	border: dashed 2px $color-megatron;
+	color: $color-trypticon;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: rem(12);
+}
+
+.f-container .metabar,
+.f-container .topbar {
+	position: relative;
+}
+
+// BIGGER BORDER
+// -----------------------------------------------------------------------------
+
+.f-item-group {
+	border-width: 2px;
+}
+
+// -----------------------------------------------------------------------------
+// SIDEBAR: CUSTOM PAGES
+// -----------------------------------------------------------------------------
+
+$f-sidebarWidth: rem(224);
+
+.fabricator-sidebar {
+  width: $f-sidebarWidth; // match fabricator
+  height: 100%;
+  padding: rem(14);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: #1c1c1c; // from fabricator
+}
+
+.fabricator-sidebar__close {
+  color: $color-jetfire;
+  font-size: rem(16);
+  background-color: transparent;
+  padding: rem(10);
+  width: 100%;
+  cursor: pointer;
+  &:hover {
+    background-color: #757575; // from fabricator
+  }
+}
+
+.fabricator-content {
+  width: calc(100% - #{$f-sidebarWidth});
+  margin-left: auto;
+
+  .container {
+    padding: 0 rem(20);
+  }
+}

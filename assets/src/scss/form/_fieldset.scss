@@ -1,0 +1,63 @@
+// =============================================================================
+//
+// FIELDSET
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASIC SETUP
+// -----------------------------------------------------------------------------
+
+.fieldset {
+
+	// allow positioning of alert message for grouped fields
+	position: relative;
+
+	// reset fieldset default styles
+	margin: 0;
+	padding: 0;
+	border: none;
+
+  margin-bottom: rem(24);
+}
+
+// -----------------------------------------------------------------------------
+// VALIDATION MESSAGE
+// -----------------------------------------------------------------------------
+
+// position the validation message
+.fieldset .form-field__message {
+  position: relative;
+  bottom: auto;
+}
+
+// -----------------------------------------------------------------------------
+// 3 FIELD FORM
+// -----------------------------------------------------------------------------
+
+.fieldset__phone {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  .form-field {
+    margin-right: rem(20);
+    margin-bottom: rem(10);
+    flex: 2;
+
+    &:first-child {
+      flex: 1;
+    }
+    &:nth-child(2) {
+      flex: 1;
+    }
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+
+  .form-field__input {
+    padding-right: rem(10);
+  }
+}

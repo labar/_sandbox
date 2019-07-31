@@ -1,0 +1,61 @@
+// =============================================================================
+//
+// HERO
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// REGULAR HERO
+// -----------------------------------------------------------------------------
+
+.hero {
+	height: rem(300);
+	margin: 0; // for when hero is a section
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-color: $color-skywarp;
+	background-image: url('../images/skeletor/skeletor-02.jpg');
+	transition: height $global-timing $global-easing .25s;
+
+  .container {
+  	height: inherit;
+  	display: flex;
+  	flex-flow: column wrap;
+  	align-items: center;
+  	justify-content: center;
+  }
+
+  // -- BREAKPOINTS
+
+	@include breakpoint($tablet-small) {
+		height: rem(330);
+	}
+	@include breakpoint($tablet) {
+		height: rem(500);
+	}
+	@include breakpoint($desktop) {
+		height: rem(600);
+	}
+	@include breakpoint($wide) {
+		height: rem(800);
+	}
+}
+
+.hero--small {
+  height: rem(150);
+// -- BREAKPOINTS
+
+	@include breakpoint($tablet-small) {
+		height: rem(165);
+	}
+	@include breakpoint($tablet) {
+		height: rem(250);
+	}
+	@include breakpoint($desktop) {
+		height: rem(300);
+	}
+	@include breakpoint($wide) {
+		height: rem(400);
+	}
+}

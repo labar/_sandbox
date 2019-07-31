@@ -1,0 +1,107 @@
+// =============================================================================
+//
+// RADIO
+//
+// =============================================================================
+
+.form-field__radio {
+	cursor: pointer;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+// position the native radio off the screen
+.form-field__radio [type="radio"] {
+	position: absolute;
+	left: -1000em;
+}
+
+// custom radio
+.form-field__radio-custom {
+	position: relative;
+	height: rem(20);
+	width: rem(20);
+	margin: 0 rem(10) 0 0;
+	padding: 0;
+	background-color: $color-jetfire;
+	border: solid 2px $color-trypticon;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+// custom radio state checked
+.form-field__radio-input:checked + .form-field__radio-custom {
+	border-color: $color-bumblebee;
+}
+
+// custom radio state focus
+.form-field__radio-input:focus + .form-field__radio-custom {
+	border-color: $color-bumblebee;
+}
+
+// custom checkmark icon checked
+.form-field__radio-input:checked + .form-field__radio-custom:after {
+	width: rem(12);
+	height: rem(12);
+	background-color: $color-bumblebee;
+	position: absolute;
+	top: rem(2);
+	right: rem(2);
+	border-radius: 50%;
+	content: "";
+}
+
+// radio text
+.form-field__radio-text {
+	font-size: rem(16);
+	font-weight: normal;
+	text-transform: none;
+	color: $color-trypticon;
+	flex: 1 0 0%;
+}
+
+// Hide alert icon
+// -----------------------------------------------------------------------------
+
+.form-field--radio.alert:after {
+	display: none;
+}
+
+// Re-position alert message
+// -----------------------------------------------------------------------------
+
+.form-field--radio.alert .form-field__message {
+	bottom: rem(-33);
+	width: auto;
+}
+
+// -----------------------------------------------------------------------------
+// LARGE RADIO
+// -----------------------------------------------------------------------------
+
+.form-field__radio--large {
+
+	.form-field__radio-custom {
+		width: rem(40);
+		height: rem(40);
+		border-width: 3px;
+	}
+
+	.form-field__radio-custom:after {
+		width:  rem(26) !important; // important because of having to do black magic for custom element
+		height: rem(26) !important; // important because of having to do black magic for custom element
+		top:    rem(4)  !important; // important because of having to do black magic for custom element
+		right:  rem(4)  !important; // important because of having to do black magic for custom element
+	}
+}
+
+
+// -----------------------------------------------------------------------------
+// ALERT STYLES
+// -----------------------------------------------------------------------------
+
+.alert .form-field__radio-custom {
+	border-color: $color-bumblebee;
+}

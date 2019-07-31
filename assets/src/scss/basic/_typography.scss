@@ -1,0 +1,204 @@
+// =============================================================================
+//
+// TYPOGRAPHY
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// RESET HEADINGS
+// -----------------------------------------------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+// -----------------------------------------------------------------------------
+// HEADINGS
+// -----------------------------------------------------------------------------
+
+// .h1
+// -----------------------------------------------------------------------------
+
+h1, .h1 {
+	font-family: $custom-font-2;
+	font-size: rem(36);
+	font-weight: 300;
+	color: $color-trypticon;
+
+	sup {
+		font-size: rem(30);
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		font-size: rem(58);
+	}
+}
+
+// .h2
+// -----------------------------------------------------------------------------
+
+h2, .h2 {
+	font-family: $custom-font-1;
+	color: $color-trypticon;
+	font-size: rem(24);
+  font-weight: normal;
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($tablet-small) {
+		font-size: rem(32);
+		line-height: rem(40);
+	}
+}
+
+// .h3
+// -----------------------------------------------------------------------------
+
+h3, .h3 {
+	font-family: $custom-font-1;
+	color: $color-trypticon;
+	font-weight: 300;
+	font-size: rem(20);
+	max-width: 100%;
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		font-size: rem(24);
+	}
+}
+
+// .h4
+// -----------------------------------------------------------------------------
+
+h4, .h4 {
+	font-size: rem(18);
+	font-weight: bold;
+	color: $color-trypticon;
+}
+
+// Headline
+// -----------------------------------------------------------------------------
+
+.headline {
+	font-family: $custom-font-1;
+	color: $color-trypticon;
+	font-size: rem(24);
+  line-height: rem(34);
+  font-weight: normal;
+  margin: 0 0 rem(20) 0;
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($tablet-small) {
+		font-size: rem(32);
+		line-height: rem(40);
+	}
+}
+
+// Sub Headline
+// -----------------------------------------------------------------------------
+
+.sub-headline {
+	font-family: $custom-font-1;
+	color: $color-trypticon;
+	font-weight: 300;
+	font-size: rem(20);
+	line-height: normal;
+	margin: 0 0 rem(20) 0;
+	max-width: 100%;
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		font-size: rem(24);
+	}
+}
+
+
+// -----------------------------------------------------------------------------
+// PARAGRAPH
+// -----------------------------------------------------------------------------
+
+p {
+	line-height: rem(26);
+	color: $color-trypticon;
+	margin: 0 0 rem(20) 0;
+	font-size: rem(14);
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		font-size: rem(16);
+	}
+}
+
+
+// -----------------------------------------------------------------------------
+// EPIC TEXT
+// -----------------------------------------------------------------------------
+
+.epic-text {
+	font-size: rem(22);
+	line-height: rem(32);
+	font-weight: normal;
+	margin-bottom: rem(30);
+	color: $color-trypticon;
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		font-size: rem(28);
+		line-height: rem(40);
+	}
+}
+
+
+// -----------------------------------------------------------------------------
+// TEXT SIZE
+// -----------------------------------------------------------------------------
+
+.small-text {
+	font-size: rem(14);
+}
+
+.large-text {
+	font-size: rem(44);
+}
+
+
+// -----------------------------------------------------------------------------
+// TEXT ALIGNMENT
+// -----------------------------------------------------------------------------
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+
+// -----------------------------------------------------------------------------
+// TEXT STYLES
+// -----------------------------------------------------------------------------
+
+.bold {
+	font-weight: bold;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}

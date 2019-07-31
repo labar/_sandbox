@@ -1,0 +1,113 @@
+// =============================================================================
+//
+// CHECKBOX
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+// add pointer cursor to checkbox and text
+// the label is what the user clicks to activate the custom checkbox
+.form-field__checkbox {
+	cursor: pointer;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+// position the native checkbox off the screen
+.form-field__checkbox [type="checkbox"] {
+	position: absolute;
+	left: -1000em;
+}
+
+// custom checkbox
+.form-field__checkbox-custom {
+	position: relative;
+	height: rem(20);
+	width: rem(20);
+	margin: 0 rem(10) 0 0;
+	padding: 0;
+	background-color: $color-jetfire;
+	border: solid 2px $color-trypticon;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+// custom checkbox state checked
+.form-field__checkbox-input:checked + .form-field__checkbox-custom {
+	background-color: $color-bumblebee;
+	border-color: $color-bumblebee;
+}
+
+// custom checkbox state focus
+.form-field__checkbox-input:focus + .form-field__checkbox-custom {
+	border-color: $color-bumblebee;
+}
+
+// custom checkmark icon checked
+.form-field__checkbox-input:checked + .form-field__checkbox-custom:after {
+	content: $fs-check;
+	font-family: $iconakron;
+	font-size: rem(12);
+	color: $color-jetfire;
+	position: absolute;
+	top: rem(3);
+	left: rem(0);
+}
+
+// checkbox text
+.form-field__checkbox-text {
+	font-size: rem(16);
+	font-weight: normal;
+	text-transform: none;
+	color: $color-trypticon;
+	flex: 1 0 0%;
+}
+
+// Hide alert icon
+// -----------------------------------------------------------------------------
+
+.form-field--checkbox.alert:after {
+	display: none;
+}
+
+// Re-position alert message
+// -----------------------------------------------------------------------------
+
+.form-field--checkbox.alert .form-field__message {
+	bottom: rem(-33);
+	width: auto;
+}
+
+// -----------------------------------------------------------------------------
+// LARGE CHECKBOX
+// -----------------------------------------------------------------------------
+
+.form-field__checkbox--large {
+
+	// increase the size of the checkbox
+	.form-field__checkbox-custom {
+		width: rem(40);
+		height: rem(40);
+	}
+	.form-field__checkbox-custom:after {
+		font-size: rem(24) !important; // important because of having to do black magic for custom element
+		left: rem(3) !important;
+		top: rem(6) !important;
+	}
+	.form-field__checkbox-text {
+		font-size: rem(20);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// ALERT STYLES
+// -----------------------------------------------------------------------------
+
+.alert .form-field__checkbox-custom {
+	border-color: $color-bumblebee;
+}

@@ -1,0 +1,85 @@
+// =============================================================================
+//
+// SELECTIONS
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+.selections {
+	border: solid 3px $color-starscream;
+}
+
+.selections > * {
+	padding: rem(20);
+}
+
+.selections p {
+	margin: 0;
+}
+
+// TITLE
+// -----------------------------------------------------------------------------
+
+.selections__title {
+	padding-bottom: 0;
+}
+
+// SUB TITLE
+// -----------------------------------------------------------------------------
+
+.selections__sub-title {
+	font-weight: bold;
+	color: $color-trypticon;
+	margin-top: rem(10);
+}
+
+// LABEL
+// -----------------------------------------------------------------------------
+
+.selections__label {
+	width: 100%;
+	display: block;
+	padding: 0;
+	margin-bottom: 1px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+// hide the native input
+.selections__input {
+	left: rem(-1000);
+	position: absolute;
+}
+
+// CUSTOM FIELD
+// -----------------------------------------------------------------------------
+
+.selections__custom-field {
+	cursor: pointer;
+	color: $color-trypticon;
+	padding: rem(10) rem(20);
+	position: relative;
+	transition: background-color $global-timing $global-easing;
+
+	&:hover {
+		background-color: lighten($color-starscream,4%);
+	}
+}
+
+.selections__input:checked + .selections__custom-field {
+	background-color: $color-starscream;
+
+	&:after {
+		position: absolute;
+		right: rem(15);
+		top: rem(15);
+		font-family: $iconakron !important;
+		content: $fs-close;
+		color: $color-hotrod;
+	}
+}

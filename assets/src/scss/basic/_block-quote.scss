@@ -1,0 +1,37 @@
+// =============================================================================
+//
+// BLOCK QUOTE
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+.blockquote {
+	border-left: solid 3px $color-bumblebee;
+	padding: rem(10) rem(10) rem(10) rem(20);
+	color: $color-trypticon;
+	font-size: rem(14);
+	line-height: rem(20);
+	margin-top: rem(20);
+	margin-bottom: rem(20);
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		padding: rem(10) rem(10) rem(10) rem(30);
+		font-size: rem(16);
+		line-height: rem(24);
+		margin-top: rem(30);
+		margin-bottom: rem(30);
+	}
+}
+
+// Signature
+// -----------------------------------------------------------------------------
+
+.blockquote__sig {
+	font-weight: bold;
+	margin-top: rem(20);
+}

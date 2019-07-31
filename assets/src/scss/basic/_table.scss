@@ -1,0 +1,74 @@
+// =============================================================================
+//
+// TABLES
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// RESPONSIVE TABLES (lol)
+// -----------------------------------------------------------------------------
+
+.table {
+	overflow-x: scroll;
+	display: block;
+	width: 100%;
+}
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+// cell-spacing css replacement
+table {
+	border-collapse: collapse;
+	width: inherit;
+	border-left: solid 10px $color-bumblebee;
+}
+
+// reset box-sizing
+tbody,
+tr,
+td,
+th,
+thead,
+tfoot {
+	box-sizing: initial;
+}
+
+tr {
+
+	// add border to each row
+	border-bottom: solid 1px $color-megatron;
+
+	// add background color on every even row
+	&:nth-child(even) {
+		background-color: $color-starscream;
+	}
+}
+
+th {
+	padding: rem(20) rem(14);
+	font-weight: bold;
+	text-align: left;
+	min-width: rem(50);
+	color: $color-trypticon;
+}
+
+td {
+	padding: rem(14) rem(14);
+	min-width: rem(100);
+	color: $color-trypticon;
+}
+
+tfoot {
+
+	tr {
+		background-color: $color-trypticon;
+		border-bottom: none;
+	}
+
+	td {
+		color: $color-jetfire;
+		font-weight: bold;
+	}
+}

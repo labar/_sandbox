@@ -1,0 +1,18 @@
+
+// -----------------------------------------------------------------------------
+// DISABLED
+// -----------------------------------------------------------------------------
+
+// Local
+.btn--disabled,
+.btn--disabled:hover,
+.btn--disabled:focus,
+
+// Global
+.btn.disabled,
+.btn.disabled:hover,
+.btn.disabled:focus {
+	opacity: .5;
+	cursor: not-allowed;
+	filter: grayscale(90%);
+}

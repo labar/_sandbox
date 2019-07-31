@@ -1,0 +1,78 @@
+// =============================================================================
+//
+// SLASH HEADING
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BLOCK
+// -----------------------------------------------------------------------------
+
+.slash-heading {
+
+	margin-bottom: rem(32);
+	background-repeat: repeat-x;
+	background-position: left center;
+	background-size: 11px 20px;
+
+	.h1,
+	.h2,
+	.h3 {
+		padding: 0 rem(30) 0 0;
+		color: $color-trypticon;
+		background-color: $color-jetfire;
+		display: inline-block;
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($mobile-large) {
+		// Set background image and tile it horizontal
+		background-image: url('../images/tiles/slash-tile-gray.svg');
+	}
+}
+
+// -----------------------------------------------------------------------------
+// SKINS
+// -----------------------------------------------------------------------------
+
+.slash-heading--white {
+	.h1,
+	.h2,
+	.h3 {
+		background-color: $color-starscream;
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($mobile-large) {
+		background-image: url('../images/tiles/slash-tile-white.svg');
+	}
+}
+
+.slash-heading--gray {
+	.h1,
+	.h2,
+	.h3 {
+		background-color: $color-jetfire;
+	}
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($mobile-large) {
+		background-image: url('../images/tiles/slash-tile-gray.svg');
+	}
+}
+
+// -----------------------------------------------------------------------------
+// ALIGN RIGHT
+// -----------------------------------------------------------------------------
+
+.slash-heading--align-right {
+	text-align: right;
+	.h1,
+	.h2,
+	.h3 {
+		padding: 0 0 0 rem(30);
+	}
+}

@@ -1,0 +1,155 @@
+// =============================================================================
+//
+// OFF CANVAS
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+.off-canvas {
+
+  // -- BREAKPOINTS
+
+  @include breakpoint($tablet) {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// PANEL
+// -----------------------------------------------------------------------------
+
+// create offcanvas menu
+.off-canvas__panel {
+  width: calc(100% - #{$topbar-height});
+  height: calc(100% - #{$topbar-height});
+  padding: rem(20);
+  padding-top: rem(40);
+  position: fixed;
+  top: $topbar-height;
+  right: calc(-100% - #{$topbar-height});
+  z-index: $z-index-71;
+  overflow: auto;
+  background-color: $color-starscream;
+  transition: right $global-timing $global-easing;
+
+  // -- BREAKPOINTS
+
+  @include breakpoint($mobile-large) {
+    width: rem(320);
+    min-width: rem(320);
+  }
+
+  // reset panel from mobile
+  @include breakpoint($tablet) {
+    min-width: rem(240);
+    height: auto;
+    position: static;
+    top: initial;
+    right: initial;
+    z-index: auto;
+    padding: 0;
+    padding-right: rem(30);
+    margin-right: rem(30);
+    border-right: solid 1px $color-megatron;
+    background-color: transparent;
+  }
+}
+
+// PANEL IS ON
+// -----------------------------------------------------------------------------
+
+.off-canvas--is-on .off-canvas__panel {
+  right: 0px;
+  box-shadow: 0px 0px 3px 0px rgba($color-skywarp,.5);
+}
+
+// CLOSE BUTTON
+// -----------------------------------------------------------------------------
+
+.off-canvas__panel-close {
+
+  // reset button
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+
+  // position button
+  position: absolute;
+  top: rem(15);
+  right: rem(11);
+
+  i {
+    font-size: rem(22);
+    color: $color-trypticon;
+  }
+
+  // -- BREAKPOINTS
+
+  @include breakpoint($tablet) {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+// TITLE
+// -----------------------------------------------------------------------------
+
+.off-canvas__panel-title {
+  font-size: rem(16);
+  font-weight: bold;
+  color: $color-bumblebee;
+  margin-bottom: rem(40);
+}
+
+// HEADING
+// -----------------------------------------------------------------------------
+
+.off-canvas__panel-label {
+  font-weight: bold;
+  color: $color-trypticon;
+  margin-bottom: rem(20);
+}
+
+// FIELDSET OVERRIDE
+// -----------------------------------------------------------------------------
+
+.off-canvas__panel fieldset {
+  margin-bottom: rem(20);
+}
+
+// -----------------------------------------------------------------------------
+// TOGGLE
+// -----------------------------------------------------------------------------
+
+.off-canvas-toggle {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: $color-bumblebee;
+  font-size: rem(16);
+  cursor: pointer;
+  margin-bottom: rem(20);
+
+  i {
+    padding-right: rem(10);
+    font-size: rem(30);
+  }
+
+  // -- BREAKPOINTS
+
+  @include breakpoint($tablet) {
+    display: none;
+    visibility: hidden;
+  }
+}

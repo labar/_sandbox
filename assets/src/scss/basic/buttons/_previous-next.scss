@@ -1,0 +1,30 @@
+
+// -----------------------------------------------------------------------------
+// PREVIOUS & NEXT BUTTONS
+// -----------------------------------------------------------------------------
+
+.btn--next {
+	position: relative;
+	padding-right: rem(30);
+	&:after {
+		position: absolute;
+		top: rem(8);
+		right: rem(10);
+		font-family: "Skeletor";
+		font-size: rem(32);
+		content: $fs-arrow-right-alt;
+	}
+}
+
+.btn--previous {
+	position: relative;
+	padding-left: rem(30);
+	&:after {
+		position: absolute;
+		top: rem(8);
+		left: rem(10);
+		font-family: "Skeletor";
+		font-size: rem(32);
+		content: $fs-arrow-left-alt;
+	}
+}

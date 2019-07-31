@@ -1,0 +1,60 @@
+// =============================================================================
+//
+// SNAKE MOUNTAIN (aka WRAPPER)
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BASE
+// -----------------------------------------------------------------------------
+
+.snake-mountain {
+
+	// Setting the position to static helps Safari deal with the height animation on topbar
+	position: static;
+
+	// Hide the off-canvas stuff
+	overflow: hidden;
+
+	// Stop scrollbars from showing through and keeps the panel fixed position stable on crazy scroll
+  backface-visibility: hidden;
+
+  // pad the top for proper spacing by default (no hero)
+	padding-top: rem(46);
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		padding-top: rem(91);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// MODIFIERS
+// -----------------------------------------------------------------------------
+
+// METABAR
+// -----------------------------------------------------------------------------
+
+// adjust content padding when metabar is enabled
+.snake-mountain--metabar {
+
+	padding-top: rem(46);
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		padding-top: rem(131);
+	}
+}
+
+// move topbar from the top when metabar is enabled
+.snake-mountain--metabar .topbar {
+	top: 0px;
+
+	// -- BREAKPOINTS
+
+	@include breakpoint($narrow) {
+		top: 40px;
+	}
+}
