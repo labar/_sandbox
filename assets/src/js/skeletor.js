@@ -10,9 +10,9 @@
 
 function setHeight() {
 
-  footerHeight = $('.footer').outerHeight();
-  windowHeight = $(window).outerHeight();
-  offsetShrink = 250; // height value that stops script on mobile
+  var footerHeight = $('.footer').outerHeight(),
+      windowHeight = $(window).outerHeight(),
+      offsetShrink = 250; // height value that stops script on mobile
 
   if (windowHeight > offsetShrink) {
     $('.the-pit').css('min-height', (windowHeight - footerHeight)).delay(800);
